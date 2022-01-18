@@ -1,0 +1,10 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://perimeterx.jfrog.io/artifactory/px-Android-SDK/' }
+    }
+}
+rootProject.name = "PerimeterX_SDK_Demo"
+include ':app'

@@ -1,0 +1,15 @@
+iOS/PerimeterX_SDK_Demo/PerimeterX_SDK_Demo.xcworkspace/xcuserdata
+iOS/PerimeterX_SDK_Demo/PerimeterX_SDK_Demo.xcodeproj/xcuserdata
+iOS/PerimeterX_SDK_Demo/PerimeterX_SDK_Demo.xcodeproj/project.xcworkspace/xcuserdata/
+iOS/PerimeterX_SDK_Demo/Pods
+Android/PerimeterX_SDK_Demo/*.iml
+Android/PerimeterX_SDK_Demo/.gradle
+Android/PerimeterX_SDK_Demo/local.properties
+Android/PerimeterX_SDK_Demo/.idea
+Android/PerimeterX_SDK_Demo/.DS_Store
+Android/PerimeterX_SDK_Demo/build
+Android/PerimeterX_SDK_Demo/captures
+Android/PerimeterX_SDK_Demo/.externalNativeBuild
+Android/PerimeterX_SDK_Demo/.cxx
+Android/PerimeterX_SDK_Demo/local.properties
+Android/PerimeterX_SDK_Demo/app/build

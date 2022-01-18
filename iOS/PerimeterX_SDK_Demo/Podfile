@@ -1,0 +1,7 @@
+platform :ios, '12.1'
+use_frameworks!
+
+target 'PerimeterX_SDK_Demo' do
+  pod 'Alamofire', '~> 5.4.4'
+  pod 'PerimeterX', '2.0.0'
+end
