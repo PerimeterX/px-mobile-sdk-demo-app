@@ -1,4 +1,4 @@
-package com.perimeterx.perimeterx_sdk_demo
+package com.perimeterx.android_sdk_demo
 
 import android.app.Application
 import android.os.Handler

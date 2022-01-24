@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.perimeterx.perimeterx_sdk_demo"
+        applicationId "com.perimeterx.android_sdk_demo"
         minSdk 21
         targetSdk 31
         versionCode 1
