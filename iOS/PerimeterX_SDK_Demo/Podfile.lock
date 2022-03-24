@@ -1,10 +1,10 @@
 PODS:
   - Alamofire (5.4.4)
-  - PerimeterX (2.0.1)
+  - PerimeterX (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4.4)
-  - PerimeterX (= 2.0.1)
+  - PerimeterX (= 2.1.0)
 
 SPEC REPOS:
   trunk:
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
-  PerimeterX: bb603114d607327259039daf5cd738fb768033c2
+  PerimeterX: c71eba0bd79e3ab128c1cc43ce590d86ea8ea375
 
-PODFILE CHECKSUM: 0dcc27f99a00885902de31cf58d7c8367b50343a
+PODFILE CHECKSUM: c62ed7e5e41d3bb88e641b3477b34c70e3142078
 
 COCOAPODS: 1.11.2

@@ -16,6 +16,7 @@
 		6A70CB1D272E87C800909C25 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A70CB1C272E87C800909C25 /* MainViewController.swift */; };
 		6AC90DA42737C6BC001247FC /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC90DA32737C6BC001247FC /* ProductDetailsViewController.swift */; };
 		6AC90DA62737CF97001247FC /* PerimeterxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC90DA52737CF97001247FC /* PerimeterxManager.swift */; };
+		6AD84AF527EC6C0800555505 /* PerimeterX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6AD84AF427EC6C0800555505 /* PerimeterX.bundle */; };
 		6AF469722734288B00133205 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF469712734288B00133205 /* APIDataManager.swift */; };
 		6AF4697427343D6100133205 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF4697327343D6100133205 /* ProductsViewController.swift */; };
 		6AF469762734442D00133205 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF469752734442D00133205 /* Product.swift */; };
@@ -36,6 +37,7 @@
 		6A70CB1C272E87C800909C25 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6AC90DA32737C6BC001247FC /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		6AC90DA52737CF97001247FC /* PerimeterxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerimeterxManager.swift; sourceTree = "<group>"; };
+		6AD84AF427EC6C0800555505 /* PerimeterX.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PerimeterX.bundle; sourceTree = "<group>"; };
 		6AF469712734288B00133205 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		6AF4697327343D6100133205 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		6AF469752734442D00133205 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				6A70CB0D272E7B2300909C25 /* Info.plist */,
 				6AC90DAC2737D4D1001247FC /* Model */,
 				6AC90DAB2737D36C001247FC /* PerimeterX */,
+				6AD84AF427EC6C0800555505 /* PerimeterX.bundle */,
 				6AC90DA82737D304001247FC /* Storyboards */,
 				6AC90DA72737D2EE001247FC /* UI */,
 			);
@@ -246,6 +249,7 @@
 			files = (
 				6A70CB0C272E7B2300909C25 /* LaunchScreen.storyboard in Resources */,
 				6A70CB09272E7B2300909C25 /* Assets.xcassets in Resources */,
+				6AD84AF527EC6C0800555505 /* PerimeterX.bundle in Resources */,
 				6A70CB07272E7B2100909C25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
