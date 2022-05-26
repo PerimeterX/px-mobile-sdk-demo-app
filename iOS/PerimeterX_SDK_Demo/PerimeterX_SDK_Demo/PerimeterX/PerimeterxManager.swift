@@ -20,6 +20,10 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
         print("PerimeterX Challenge Solved")
     }
     
+    func perimeterxDidChallengeCancelled(forAppId appId: String) {
+        print("PerimeterX Challenge Cancelled")
+    }
+    
     // MARK: - singleton
     
     static let shared = PerimeterxManager()
