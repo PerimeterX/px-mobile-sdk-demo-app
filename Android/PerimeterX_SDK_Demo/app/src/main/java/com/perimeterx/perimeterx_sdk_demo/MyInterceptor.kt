@@ -11,8 +11,8 @@ class MyInterceptor: Interceptor {
         val newRequest = chain.request().newBuilder()
 
         // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => fetch HTTP headers from PerimeterX and add them to your request
-        val headers = PerimeterX.INSTANCE.headersForURLRequest(null)
-        for ((key, value) in headers) {
+        val headers = PerimeterX.headersForURLRequest(null)
+        for ((key, value) in headers!!) {
             newRequest.addHeader(key, value)
         }
 
@@ -22,17 +22,17 @@ class MyInterceptor: Interceptor {
             val responseBody = response.body?.string()
             if (responseBody != null) {
                 // When requestsInterceptedAutomaticallyEnabled is set to true in the policy => check that the error is "Request blocked by PerimeterX"
-                val isRequestBlockedError = PerimeterX.INSTANCE.isRequestBlockedError(responseBody)
+                val isRequestBlockedError = PerimeterX.isRequestBlockedError(responseBody)
                 if (isRequestBlockedError) {
                     println("request was blocked by PX")
                 }
 
                 // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => pass the data and response to PerimeterX to handle it
-                val isHandledByPX = PerimeterX.INSTANCE.handleResponse(null, responseBody, response.code)
+                val isHandledByPX = PerimeterX.handleResponse(responseBody, null)
                 if (isHandledByPX) {
                     println("block response was handled by PX")
                     // Replace the original response with a specific blocked error
-                    return response.newBuilder().body(PerimeterX.INSTANCE.blockedErrorBody().toResponseBody()).build()
+                    return response.newBuilder().body(PerimeterX.blockedErrorBody().toResponseBody()).build()
                 }
 
                 // Put back the response's body (can be read only once and we just did)

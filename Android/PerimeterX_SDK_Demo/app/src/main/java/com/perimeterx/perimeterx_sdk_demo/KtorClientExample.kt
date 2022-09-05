@@ -24,7 +24,7 @@ object KtorClientExample {
             println("request was finished")
         } catch (exception: Exception) {
             println("request was failed. exception: $exception")
-            if (exception.message.toString().contains(PerimeterX.INSTANCE.blockedErrorBody())) {
+            if (exception.message.toString().contains(PerimeterX.blockedErrorBody())) {
                 println("request was blocked")
             }
         }

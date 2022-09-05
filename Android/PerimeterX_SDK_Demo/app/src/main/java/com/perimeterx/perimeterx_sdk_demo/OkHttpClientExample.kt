@@ -18,7 +18,7 @@ object OkHttpClientExample {
             okHttpClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) {
                     response.body?.let { body ->
-                        if (PerimeterX.INSTANCE.isRequestBlockedError(body.string())) {
+                        if (PerimeterX.isRequestBlockedError(body.string())) {
                             println("request was blocked")
                         }
                     }

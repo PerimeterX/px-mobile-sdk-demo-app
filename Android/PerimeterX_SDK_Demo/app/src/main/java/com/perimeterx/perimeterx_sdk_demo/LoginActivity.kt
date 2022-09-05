@@ -26,7 +26,7 @@ class LoginActivity: AppCompatActivity() {
         }
 
         loginButton.isEnabled = false
-        PerimeterX.INSTANCE.addInitializationFinishedCallback(null) {
+        PerimeterX.addInitializationFinishedCallback(null) {
             loginButton.isEnabled = true
         }
     }
