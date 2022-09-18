@@ -103,7 +103,7 @@ class APIDataManager {
         
         if let data = data, let response = response as? HTTPURLResponse {
             // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => pass the data and response to PerimeterX to handle it //
-            let isHandledByPX = PerimeterX.handleResponse(data: data, response: response)
+            let isHandledByPX = PerimeterX.handleResponse(response: response, data: data)
             if isHandledByPX {
                 print("block response was handled by PX")
             }

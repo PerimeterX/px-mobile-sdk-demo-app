@@ -23,8 +23,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Enable the login button once PerimeterX SDK is ready //
         loginButton.isEnabled = false
-        PerimeterX.addInitializationFinishedCallback { [weak self] in
-            self?.loginButton.isEnabled = true
+        do {
+            try PerimeterX.addInitializationFinishedCallback { [weak self] in
+                self?.loginButton.isEnabled = true
+            }
+        }
+        catch {
+            print("error: \(error)")
         }
     }
     
