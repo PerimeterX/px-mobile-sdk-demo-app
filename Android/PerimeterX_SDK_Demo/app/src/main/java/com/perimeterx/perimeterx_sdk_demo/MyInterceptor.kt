@@ -28,7 +28,9 @@ class MyInterceptor: Interceptor {
                 }
 
                 // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => pass the data and response to PerimeterX to handle it
-                val isHandledByPX = PerimeterX.handleResponse(responseBody, null)
+                val isHandledByPX = PerimeterX.handleResponse(responseBody, null) { result ->
+                    println("challenge result = $result")
+                }
                 if (isHandledByPX) {
                     println("block response was handled by PX")
                     // Replace the original response with a specific blocked error
