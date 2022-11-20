@@ -21,3 +21,9 @@ PerimeterX is the leading provider of application security solutions that keep y
 1. Download the demo app.
 2. Open the project with Android Studio.
 3. Run the app and review the code :)
+
+
+### React Native
+1. Download the demo app.
+2. Open the iOS project with Xcode and th Android project with Android Studio.
+3. Run the app and review the code :)
