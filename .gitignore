@@ -13,3 +13,13 @@ Android/PerimeterX_SDK_Demo/.externalNativeBuild
 Android/PerimeterX_SDK_Demo/.cxx
 Android/PerimeterX_SDK_Demo/local.properties
 Android/PerimeterX_SDK_Demo/app/build
+ReactNative/PerimeterX_SDK_Demo/ios/PerimeterX_SDK_Demo.xcworkspace/xcuserdata
+ReactNative/PerimeterX_SDK_Demo/ios/PerimeterX_SDK_Demo.xcodeproj/xcuserdata
+ReactNative/PerimeterX_SDK_Demo/ios/PerimeterX_SDK_Demo.xcodeproj/project.xcworkspace/xcuserdata/
+ReactNative/PerimeterX_SDK_Demo/ios/Pods
+ReactNative/PerimeterX_SDK_Demo/ios/build
+ReactNative/PerimeterX_SDK_Demo/android/.gradle
+ReactNative/PerimeterX_SDK_Demo/android/local.properties
+ReactNative/PerimeterX_SDK_Demo/android/.idea
+ReactNative/PerimeterX_SDK_Demo/android/app/build
+ReactNative/PerimeterX_SDK_Demo/android/app/libs
