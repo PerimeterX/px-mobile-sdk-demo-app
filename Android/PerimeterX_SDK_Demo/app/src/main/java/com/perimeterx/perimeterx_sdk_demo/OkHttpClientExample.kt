@@ -8,8 +8,8 @@ import okhttp3.Request
 object OkHttpClientExample {
 
     private var okHttpClient: OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(MyInterceptor())
-        .addInterceptor(PXInterceptor()) // MUST BE THE LAST INTERCEPTOR IN THE CHAIN
+//        .addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none`
+        .addInterceptor(PXInterceptor()) // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
         .build()
 
     fun sendLoginRequest(email: String, password: String) {

@@ -5,12 +5,15 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 
+/*
+This is an example to how write a c custom interceptor that interacts with the SDK manually.
+ */
 class MyInterceptor: Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().newBuilder()
 
-        // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => fetch HTTP headers from PerimeterX and add them to your request
+        // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => get HTTP headers from PerimeterX and add them to your request //
         val headers = PerimeterX.headersForURLRequest(null)
         for ((key, value) in headers!!) {
             newRequest.addHeader(key, value)
@@ -21,13 +24,13 @@ class MyInterceptor: Interceptor {
             // The code below is an example to how you can check that the request was blocked. This is not required
             val responseBody = response.body?.string()
             if (responseBody != null) {
-                // When requestsInterceptedAutomaticallyEnabled is set to true in the policy => check that the error is "Request blocked by PerimeterX"
+                // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`  => check that the error is "Request blocked by PerimeterX" //
                 val isRequestBlockedError = PerimeterX.isRequestBlockedError(responseBody)
                 if (isRequestBlockedError) {
                     println("request was blocked by PX")
                 }
 
-                // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => pass the data and response to PerimeterX to handle it
+                // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => pass the data and response to PerimeterX to handle it //
                 val isHandledByPX = PerimeterX.handleResponse(responseBody, null) { result ->
                     println("challenge result = $result")
                 }

@@ -24,10 +24,5 @@ class LoginActivity: AppCompatActivity() {
                 APIDataManager.sendLoginRequest(username.text.toString(), password.text.toString())
             }
         }
-
-        loginButton.isEnabled = false
-        PerimeterX.addInitializationFinishedCallback(null) {
-            loginButton.isEnabled = true
-        }
     }
 }

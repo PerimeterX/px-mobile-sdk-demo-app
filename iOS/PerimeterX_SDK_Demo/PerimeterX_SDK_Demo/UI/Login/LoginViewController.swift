@@ -18,19 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         versionLabel.text = "PerimeterX iOS SDK v\(PerimeterX.sdkVersion())"
-        
-        // Enable the login button once PerimeterX SDK is ready //
-        loginButton.isEnabled = false
-        do {
-            try PerimeterX.addInitializationFinishedCallback { [weak self] in
-                self?.loginButton.isEnabled = true
-            }
-        }
-        catch {
-            print("error: \(error)")
-        }
     }
     
     // MARK: - UITextFieldDelegate

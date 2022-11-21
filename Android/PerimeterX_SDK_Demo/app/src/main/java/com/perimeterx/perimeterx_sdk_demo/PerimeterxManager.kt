@@ -13,24 +13,20 @@ object PerimeterxManager: PerimeterXDelegate {
 
     // PerimeterXDelegate
 
-    override fun perimeterxReady(appId: String) {
-
-    }
-
-    override fun perimeterxFailure(appId: String, error: String) {
-
-    }
-
-    override fun perimeterxRequestBlockedHandler(p0: String) {
+    override fun perimeterxRequestBlockedHandler(url: String?, appId: String) {
         println("PerimeterX Request Blocked")
     }
 
-    override fun perimeterxChallengeSolvedHandler(p0: String) {
+    override fun perimeterxChallengeSolvedHandler(appId: String) {
         println("PerimeterX Challenge Solved")
     }
 
-    override fun perimeterxChallengeCancelledHandler(p0: String) {
+    override fun perimeterxChallengeCancelledHandler(appId: String) {
         println("PerimeterX Challenge Cancelled")
+    }
+
+    override fun perimeterxHeadersWereUpdated(headers: HashMap<String, String>, appId: String) {
+        println("PerimeterX Headers Were Updated")
     }
 
     // properties
@@ -53,7 +49,7 @@ object PerimeterxManager: PerimeterXDelegate {
         policy.doctorCheckEnabled = true
 
         // Start PerimeterX SDK with your AppID //
-        PerimeterX.start(application, appId, this, PXPolicy())
+        PerimeterX.start(application, appId, this, policy)
     }
 
     private fun setCustomParameters() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A239403292B962700B7B49D /* PerimeterX_SDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A239402292B962600B7B49D /* PerimeterX_SDK.xcframework */; };
+		6A239404292B962700B7B49D /* PerimeterX_SDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A239402292B962600B7B49D /* PerimeterX_SDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A70CB00272E7B2100909C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A70CAFF272E7B2100909C25 /* AppDelegate.swift */; };
 		6A70CB02272E7B2100909C25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A70CB01272E7B2100909C25 /* SceneDelegate.swift */; };
 		6A70CB04272E7B2100909C25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A70CB03272E7B2100909C25 /* LoginViewController.swift */; };
@@ -24,8 +26,23 @@
 		91667DC0C007395A4AA75DB0 /* Pods_PerimeterX_SDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60B67FBFE71B0D9E6329866 /* Pods_PerimeterX_SDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6A239405292B962700B7B49D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A239404292B962700B7B49D /* PerimeterX_SDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		273914B1E7B396D5E3548B09 /* Pods-PerimeterX_SDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerimeterX_SDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-PerimeterX_SDK_Demo/Pods-PerimeterX_SDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
+		6A239402292B962600B7B49D /* PerimeterX_SDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PerimeterX_SDK.xcframework; sourceTree = "<group>"; };
 		6A70CAFC272E7B2100909C25 /* PerimeterX_SDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerimeterX_SDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A70CAFF272E7B2100909C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A70CB01272E7B2100909C25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91667DC0C007395A4AA75DB0 /* Pods_PerimeterX_SDK_Demo.framework in Frameworks */,
+				6A239403292B962700B7B49D /* PerimeterX_SDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +88,7 @@
 		5142412723B1EC2F086EA8D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A239402292B962600B7B49D /* PerimeterX_SDK.xcframework */,
 				A60B67FBFE71B0D9E6329866 /* Pods_PerimeterX_SDK_Demo.framework */,
 			);
 			name = Frameworks;
@@ -199,6 +218,7 @@
 				6A70CAF9272E7B2100909C25 /* Frameworks */,
 				6A70CAFA272E7B2100909C25 /* Resources */,
 				3DB1087D5AFABF892B1E797F /* [CP] Embed Pods Frameworks */,
+				6A239405292B962700B7B49D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

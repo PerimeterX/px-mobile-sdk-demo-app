@@ -12,7 +12,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     
     // MARK: - PerimeterXDelegate
     
-    func perimeterxDidRequestBlocked(forAppId appId: String) {
+    func perimeterxDidRequestBlocked(url: URL?, appId: String) {
         print("PerimeterX Request Blocked")
     }
     
@@ -24,6 +24,10 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
         print("PerimeterX Challenge Cancelled")
     }
     
+    func perimeterxHeadersWereUpdated(headers: [String : String], forAppId appId: String) {
+        print("PerimeterX Headers Were Updated")
+    }
+    
     // MARK: - singleton
     
     static let shared = PerimeterxManager()
@@ -31,6 +35,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     // MARK: - properties
     
     private let pxAppId = "PXj9y4Q8Em"
+    let urlRequestInterceptionType: PXPolicyUrlRequestInterceptionType = .none
     
     // MARK: - PerimeterX
     
@@ -44,7 +49,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     private func start(appId: String) {
         // Create and config the policy //
         let policy = PXPolicy()
-        policy.urlRequestInterceptionType = .interceptAndRetryRequest
+        policy.urlRequestInterceptionType = urlRequestInterceptionType
         policy.doctorCheckEnabled = true
         policy.set(domains: ["sample-ios.pxchk.net"], forAppId: appId)
         
