@@ -113,18 +113,18 @@ public class MainApplication extends Application implements ReactApplication, Pe
 
     @Override
     public void perimeterxChallengeCancelledHandler(@NonNull String s) {
-        PerimeterXModule.shared.sendChallengeCancelledEvent();
+        PerimeterXModule.shared.handleChallengeCancelledEvent();
     }
 
     @Override
     public void perimeterxChallengeSolvedHandler(@NonNull String s) {
-        PerimeterXModule.shared.sendChallengeSolvedEvent();
+        PerimeterXModule.shared.handleChallengeSolvedEvent();
     }
 
     @Override
     public void perimeterxHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
         if (PerimeterXModule.shared != null) {
-            PerimeterXModule.shared.sendUpdatedHeaders(hashMap);
+            PerimeterXModule.shared.handleUpdatedHeaders(hashMap);
         }
     }
 

@@ -36,7 +36,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
         return "PerimeterXModule";
     }
 
-    public void sendUpdatedHeaders(HashMap<String, String> headers) {
+    public void handleUpdatedHeaders(HashMap<String, String> headers) {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
@@ -46,7 +46,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
                 .emit(pxNewHeaders, json.toString());
     }
 
-    public void sendChallengeSolvedEvent() {
+    public void handleChallengeSolvedEvent() {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
@@ -55,7 +55,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
                 .emit(pxChallengeResult, pxSolved);
     }
 
-    public void sendChallengeCancelledEvent() {
+    public void handleChallengeCancelledEvent() {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
