@@ -149,15 +149,15 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 }
 
 - (void)perimeterxDidChallengeSolvedForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] sendChallengeSolvedEvent];
+  [[PerimeterXModule shared] handleChallengeSolvedEvent];
 }
 
 - (void)perimeterxDidChallengeCancelledForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] sendChallengeCancelledEvent];
+  [[PerimeterXModule shared] handleChallengeCancelledEvent];
 }
 
 - (void)perimeterxHeadersWereUpdatedWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
-  [[PerimeterXModule shared] sendUpdatedHeaders:headers];
+  [[PerimeterXModule shared] handleUpdatedHeaders:headers];
 }
 
 @end

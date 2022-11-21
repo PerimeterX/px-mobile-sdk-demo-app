@@ -31,17 +31,17 @@ static PerimeterXModule *shared = nil;
   return shared;
 }
 
-- (void)sendUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers {
+- (void)handleUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers {
   NSData *data = [NSJSONSerialization dataWithJSONObject:headers options:0 error:nil];
   NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   [self sendEventWithName:pxNewHeaders body:json];
 }
 
-- (void)sendChallengeSolvedEvent {
+- (void)handleChallengeSolvedEvent {
   [self sendEventWithName:pxChallengeResult body:pxSolved];
 }
 
-- (void)sendChallengeCancelledEvent {
+- (void)handleChallengeCancelledEvent {
   [self sendEventWithName:pxChallengeResult body:pxCancelled];
 }
 
