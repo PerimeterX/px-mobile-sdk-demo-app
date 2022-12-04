@@ -75,13 +75,12 @@ const App: () => Node = () => {
   const sendRequest = async () => {
     /* Get HTTP headers */
     if (pxHeader == null) {
-      PerimeterXModule.getHTTPHeaders(async headers => {
-        const obj = JSON.parse(headers);
-        console.log(`[PX] got px headers from getter: ${JSON.stringify(obj)}`);
-        sentRequest(obj);
-      });
+      const headers = await PerimeterXModule.getHTTPHeaders();
+      const obj = JSON.parse(headers);
+      console.log(`[PX] got px headers from getter: ${JSON.stringify(obj)}`);
+      await sentRequest(obj);
     } else {
-      sentRequest(pxHeader);
+      await sentRequest(pxHeader);
     }
   };
 
@@ -100,30 +99,28 @@ const App: () => Node = () => {
 
       console.log('[PX] sending response to native module');
       /* Send the response to the SDK */
-      PerimeterXModule.handleResponse(
+      const result = await PerimeterXModule.handleResponse(
         JSON.stringify(json),
         response.status,
         url,
-        async result => {
-          /*
-          check the result:
-            'false' - not handled by the SDK
-            'solved' - challenge solved
-            'cancelled' - challenge cancelled
-          */
-          console.log(`[PX] result: ${result}`);
-          if (result === 'solved') {
-            console.log('[PX] challenge solved');
-            wait(5000); // not required. just for simulation.
-            sendRequest();
-          } else if (result === 'false') {
-            console.log('[PX] request finished successfully');
-            Alert.alert('request finished successfully');
-          } else if (result === 'cancelled') {
-            console.log('[PX] challenge cancelled');
-          }
-        },
       );
+      /*
+        check the result:
+        'false' - not handled by the SDK
+        'solved' - challenge solved
+        'cancelled' - challenge cancelled
+      */
+      console.log(`[PX] result: ${result}`);
+      if (result === 'solved') {
+        console.log('[PX] challenge solved');
+        wait(5000); // not required. just for simulation.
+        await sendRequest();
+      } else if (result === 'false') {
+        console.log('[PX] request finished successfully');
+        Alert.alert('request finished successfully');
+      } else if (result === 'cancelled') {
+        console.log('[PX] challenge cancelled');
+      }
     } catch (error) {
       console.error(error);
     }
