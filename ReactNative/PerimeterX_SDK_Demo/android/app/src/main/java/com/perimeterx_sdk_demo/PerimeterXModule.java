@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.perimeterx.mobile_sdk.PerimeterX;
+import com.perimeterx.mobile_sdk.PerimeterXChallengeResult;
 
 import org.json.JSONObject;
 
@@ -21,7 +22,6 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
     String pxChallengeResult = "PxChallengeResult";
     String pxSolved = "solved";
     String pxCancelled = "cancelled";
-    String pxTrue = "true";
     String pxFalse = "false";
 
     // PX Module
@@ -36,7 +36,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
         return "PerimeterXModule";
     }
 
-    public void sendUpdatedHeaders(HashMap<String, String> headers) {
+    public void handleUpdatedHeaders(HashMap<String, String> headers) {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
@@ -46,7 +46,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
                 .emit(pxNewHeaders, json.toString());
     }
 
-    public void sendChallengeSolvedEvent() {
+    public void handleChallengeSolvedEvent() {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
@@ -55,7 +55,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
                 .emit(pxChallengeResult, pxSolved);
     }
 
-    public void sendChallengeCancelledEvent() {
+    public void handleChallengeCancelledEvent() {
         if (!this.getReactApplicationContext().hasCatalystInstance()) {
             return;
         }
@@ -72,7 +72,12 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void handleResponse(String response, Integer code, String url, Callback callback) {
-        boolean handled = PerimeterX.INSTANCE.handleResponse(null, response, code);
-        callback.invoke(handled ? pxTrue : pxFalse);
+        boolean handled = PerimeterX.INSTANCE.handleResponse(response, null, result -> {
+            callback.invoke(result == PerimeterXChallengeResult.SOLVED ? pxSolved : pxCancelled);
+            return null;
+        });
+        if (!handled) {
+            callback.invoke(pxFalse);
+        }
     }
 }

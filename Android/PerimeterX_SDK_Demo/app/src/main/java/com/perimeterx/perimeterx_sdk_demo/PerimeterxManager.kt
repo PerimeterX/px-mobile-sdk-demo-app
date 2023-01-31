@@ -7,21 +7,26 @@ import androidx.core.os.postDelayed
 import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.PerimeterXDelegate
 import com.perimeterx.mobile_sdk.main.PXPolicy
+import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType
 
 object PerimeterxManager: PerimeterXDelegate {
 
     // PerimeterXDelegate
 
-    override fun perimeterxRequestBlockedHandler(p0: String) {
+    override fun perimeterxRequestBlockedHandler(url: String?, appId: String) {
         println("PerimeterX Request Blocked")
     }
 
-    override fun perimeterxChallengeSolvedHandler(p0: String) {
+    override fun perimeterxChallengeSolvedHandler(appId: String) {
         println("PerimeterX Challenge Solved")
     }
 
-    override fun perimeterxChallengeCancelledHandler(p0: String) {
+    override fun perimeterxChallengeCancelledHandler(appId: String) {
         println("PerimeterX Challenge Cancelled")
+    }
+
+    override fun perimeterxHeadersWereUpdated(headers: HashMap<String, String>, appId: String) {
+        println("PerimeterX Headers Were Updated")
     }
 
     // properties
@@ -31,42 +36,26 @@ object PerimeterxManager: PerimeterXDelegate {
     // PerimeterX
 
     fun start(application: Application) {
-        println("SDK version: ${PerimeterX.INSTANCE.sdkVersion()}")
+        println("SDK version: ${PerimeterX.sdkVersion()}")
 
         start(application, pxAppId)
-        setPolicy()
         setCustomParameters()
     }
 
     private fun start(application: Application, appId: String) {
-        // Start PerimeterX SDK with your AppID //
-        PerimeterX.INSTANCE.start(application, appId, this, true) { success ->
-            if (success) {
-                PerimeterX.INSTANCE.vid(null)?.let { vid ->
-                    println("vid: $vid")
-                }
-            }
-            else {
-                println("start was failed")
-
-                Handler(Looper.getMainLooper()).postDelayed(1000) {
-                    // Make sure to start PerimeterX SDK again when it fails (network issue, etc.) //
-                    start(application, appId)
-                }
-            }
-        }
-    }
-
-    private fun setPolicy() {
+        // Create and configure the policy //
         val policy = PXPolicy()
-        policy.requestsInterceptedAutomaticallyEnabled = true
-        PerimeterX.INSTANCE.setPolicy(policy, null)
+        policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionType.INTERCEPT_AND_RETRY_REQUEST
+        policy.doctorCheckEnabled = true
+
+        // Start PerimeterX SDK with your AppID //
+        PerimeterX.start(application, appId, this, policy)
     }
 
     private fun setCustomParameters() {
         val customParameters = HashMap<String, String>()
         customParameters["custom_param1"] = "hello"
         customParameters["custom_param2"] = "world"
-        PerimeterX.INSTANCE.setCustomParameters(customParameters, null)
+        PerimeterX.setCustomParameters(customParameters, null)
     }
 }

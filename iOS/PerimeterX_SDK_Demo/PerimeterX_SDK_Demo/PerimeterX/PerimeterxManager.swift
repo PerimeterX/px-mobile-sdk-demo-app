@@ -12,7 +12,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     
     // MARK: - PerimeterXDelegate
     
-    func perimeterxDidRequestBlocked(forAppId appId: String) {
+    func perimeterxDidRequestBlocked(url: URL?, appId: String) {
         print("PerimeterX Request Blocked")
     }
     
@@ -24,6 +24,10 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
         print("PerimeterX Challenge Cancelled")
     }
     
+    func perimeterxHeadersWereUpdated(headers: [String : String], forAppId appId: String) {
+        print("PerimeterX Headers Were Updated")
+    }
+    
     // MARK: - singleton
     
     static let shared = PerimeterxManager()
@@ -31,6 +35,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     // MARK: - properties
     
     private let pxAppId = "PXj9y4Q8Em"
+    let urlRequestInterceptionType: PXPolicyUrlRequestInterceptionType = .none
     
     // MARK: - PerimeterX
     
@@ -38,41 +43,34 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
         print("SDK version: \(PerimeterX.sdkVersion())")
         
         start(appId: pxAppId)
-        setPolicy()
         setCustomParameters()
     }
     
     private func start(appId: String) {
-        // Start PerimeterX SDK with your AppID //
-        PerimeterX.start(appId: appId, delegate: self, enableDoctorCheck: true) { success, error in
-            if success {
-                if let vid = PerimeterX.vid(forAppId: nil) {
-                    print("vid: \(vid)")
-                }
-            }
-            else {
-                if let error = error {
-                    print("error: \(error)")
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    // Make sure to start PerimeterX SDK again when it fails (network issue, etc.) //
-                    self.start(appId: appId)
-                }
-            }
-        }
-    }
-    
-    private func setPolicy() {
+        // Create and config the policy //
         let policy = PXPolicy()
-        policy.requestsInterceptedAutomaticallyEnabled = true
-        PerimeterX.setPolicy(policy: policy, completion: nil)
+        policy.urlRequestInterceptionType = urlRequestInterceptionType
+        policy.doctorCheckEnabled = true
+        policy.set(domains: ["sample-ios.pxchk.net"], forAppId: appId)
+        
+        // Start PerimeterX SDK with your AppID //
+        do {
+            try PerimeterX.start(appId: appId, delegate: self, policy: policy)
+        }
+        catch {
+            print("error: \(error)")
+        }
     }
     
     private func setCustomParameters() {
         var customParameters = [String: String]()
         customParameters["custom_param1"] = "hello"
         customParameters["custom_param2"] = "world"
-        PerimeterX.setCustomParameters(parameters: customParameters, completion: nil)
+        do {
+            try PerimeterX.setCustomParameters(parameters: customParameters)
+        }
+        catch {
+            print("error: \(error)")
+        }
     }
 }

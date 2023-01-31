@@ -13,6 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6A1D82B329264587009B5C7D /* PerimeterXModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D82B229264587009B5C7D /* PerimeterXModule.m */; };
+		6A1D82B5292645E9009B5C7D /* PerimeterX_SDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1D82B4292645E9009B5C7D /* PerimeterX_SDK.xcframework */; };
+		6A1D82B6292645E9009B5C7D /* PerimeterX_SDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1D82B4292645E9009B5C7D /* PerimeterX_SDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A1D82B9292649EB009B5C7D /* PerimeterX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D82B8292649EB009B5C7D /* PerimeterX.bundle */; };
 		7699B88040F8A987B510C191 /* libPods-PerimeterX_SDK_Demo-PerimeterX_SDK_DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PerimeterX_SDK_Demo-PerimeterX_SDK_DemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -27,6 +29,20 @@
 			remoteInfo = PerimeterX_SDK_Demo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A1D82B7292645E9009B5C7D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A1D82B6292645E9009B5C7D /* PerimeterX_SDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* PerimeterX_SDK_DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerimeterX_SDK_DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-PerimeterX_SDK_Demo.a in Frameworks */,
+				6A1D82B5292645E9009B5C7D /* PerimeterX_SDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +211,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				6A1D82B7292645E9009B5C7D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

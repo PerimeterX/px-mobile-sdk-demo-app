@@ -85,27 +85,35 @@ class APIDataManager {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => fetch HTTP headers from PerimeterX and add them to your request //
-        let headers = PerimeterX.headersForURLRequest()
-        request.allHTTPHeaderFields = headers
+        // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => get HTTP headers from PerimeterX and add them to your request //
+        if PerimeterxManager.shared.urlRequestInterceptionType == .none {
+            let headers = PerimeterX.headersForURLRequest()
+            request.allHTTPHeaderFields = headers
+        }
         
         return request
     }
     
     private func handleResponse(data: Data?, response: URLResponse?, error: Error?) {
         if let error = error {
-            // When requestsInterceptedAutomaticallyEnabled is set to true in the policy => check that the error is "Request blocked by PerimeterX" //
-            let isRequestBlockedError = PerimeterX.isRequestBlockedError(error: error)
-            if isRequestBlockedError {
-                print("request was blocked by PX")
+            // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`  => check that the error is "Request blocked by PerimeterX" //
+            if PerimeterxManager.shared.urlRequestInterceptionType != .none {
+                let isRequestBlockedError = PerimeterX.isRequestBlockedError(error: error)
+                if isRequestBlockedError {
+                    print("request was blocked by PX")
+                }
             }
         }
         
         if let data = data, let response = response as? HTTPURLResponse {
-            // When requestsInterceptedAutomaticallyEnabled is set to false in the policy => pass the data and response to PerimeterX to handle it //
-            let isHandledByPX = PerimeterX.handleResponse(data: data, response: response)
-            if isHandledByPX {
-                print("block response was handled by PX")
+            // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => pass the data and response to PerimeterX to handle it //
+            if PerimeterxManager.shared.urlRequestInterceptionType == .none {
+                let isHandledByPX = PerimeterX.handleResponse(response: response, data: data) { result in
+                    print("challenge result = \(result)")
+                }
+                if isHandledByPX {
+                    print("block response was handled by PX")
+                }
             }
         }
     }

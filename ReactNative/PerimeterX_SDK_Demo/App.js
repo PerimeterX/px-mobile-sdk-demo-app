@@ -37,6 +37,15 @@ const {PerimeterXModule} = NativeModules;
 /* Create new native event emitter */
 const pxEventEmitter = new NativeEventEmitter(PerimeterXModule);
 
+var pxHeader = null;
+
+/* Add new headers listener */
+const onAddNewHeaders = headers => {
+  const obj = JSON.parse(headers);
+  console.log(`[PX] got new px headers from event: ${JSON.stringify(obj)}`);
+  pxHeader = obj;
+};
+
 /* challenge solved listener */
 const onChallengeResult = result => {
   if (result === 'solved') {
@@ -45,6 +54,11 @@ const onChallengeResult = result => {
     console.log('[PX] got challenge cancelled event');
   }
 };
+
+const subscriptionPxNewHeaders = pxEventEmitter.addListener(
+  'PxNewHeaders',
+  onAddNewHeaders,
+);
 
 const subscriptionPxChallengeResult = pxEventEmitter.addListener(
   'PxChallengeResult',
@@ -60,11 +74,14 @@ const App: () => Node = () => {
 
   const sendRequest = async () => {
     /* Get HTTP headers */
-    PerimeterXModule.getHTTPHeaders(async headers => {
+    if (pxHeader == null) {
+      const headers = await PerimeterXModule.getHTTPHeaders();
       const obj = JSON.parse(headers);
       console.log(`[PX] got px headers from getter: ${JSON.stringify(obj)}`);
-      sentRequest(obj);
-    });
+      await sentRequest(obj);
+    } else {
+      await sentRequest(pxHeader);
+    }
   };
 
   async function sentRequest(headers) {
@@ -82,27 +99,38 @@ const App: () => Node = () => {
 
       console.log('[PX] sending response to native module');
       /* Send the response to the SDK */
-      PerimeterXModule.handleResponse(
+      const result = await PerimeterXModule.handleResponse(
         JSON.stringify(json),
         response.status,
         url,
-        async result => {
-          /*
-          check the result:
-            'true' - handled by the SDK
-            'false' - not handled by the SDK
-          */
-          console.log(`[PX] result: ${result}`);
-          if (result === 'true') {
-            console.log('[PX] request blcoked');
-          } else if (result === 'false') {
-            console.log('[PX] request finished successfully');
-            Alert.alert('request finished successfully');
-          }
-        },
       );
+      /*
+        check the result:
+        'false' - not handled by the SDK
+        'solved' - challenge solved
+        'cancelled' - challenge cancelled
+      */
+      console.log(`[PX] result: ${result}`);
+      if (result === 'solved') {
+        console.log('[PX] challenge solved');
+        wait(5000); // not required. just for simulation.
+        await sendRequest();
+      } else if (result === 'false') {
+        console.log('[PX] request finished successfully');
+        Alert.alert('request finished successfully');
+      } else if (result === 'cancelled') {
+        console.log('[PX] challenge cancelled');
+      }
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  function wait(ms) {
+    const start = new Date().getTime();
+    let end = start;
+    while (end < start + ms) {
+      end = new Date().getTime();
     }
   }
 

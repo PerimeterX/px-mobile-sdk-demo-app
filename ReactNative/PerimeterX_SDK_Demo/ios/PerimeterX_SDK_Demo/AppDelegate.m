@@ -53,13 +53,14 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
     rootView.backgroundColor = [UIColor whiteColor];
   }
   
-  PXPolicy.requestsInterceptedAutomaticallyEnabled = NO;
-  [PerimeterX startWithAppId:@"PXj9y4Q8Em" delegate:self enableDoctorCheck:NO completion:^(BOOL success, NSError * _Nullable error) {
-          
-  }];
   PXPolicy *policy = [[PXPolicy alloc] init];
-  policy.requestsInterceptedAutomaticallyEnabled = NO;
-  [PerimeterX setPolicyWithPolicy:policy forAppId:nil completion:nil];
+  policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionTypeNone;
+  policy.doctorCheckEnabled = NO;
+  NSError *error = nil;
+  [PerimeterX startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
+  if (error != nil) {
+    NSLog(@"failed to start. error: %@", error.localizedDescription);
+  }
   
   [[PerimeterXModule shared] startObserving];
 
@@ -143,12 +144,20 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 // MARK: - PerimeterXDelegate
 
+- (void)perimeterxDidRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
+  
+}
+
 - (void)perimeterxDidChallengeSolvedForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] sendChallengeSolvedEvent];
+  [[PerimeterXModule shared] handleChallengeSolvedEvent];
 }
 
 - (void)perimeterxDidChallengeCancelledForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] sendChallengeCancelledEvent];
+  [[PerimeterXModule shared] handleChallengeCancelledEvent];
+}
+
+- (void)perimeterxHeadersWereUpdatedWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
+  [[PerimeterXModule shared] handleUpdatedHeaders:headers];
 }
 
 @end

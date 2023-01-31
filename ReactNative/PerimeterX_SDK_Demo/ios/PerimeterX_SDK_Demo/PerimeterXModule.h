@@ -7,9 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PerimeterXModule : RCTEventEmitter <RCTBridgeModule>
 
 + (PerimeterXModule *)shared;
-- (void)sendUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers;
-- (void)sendChallengeSolvedEvent;
-- (void)sendChallengeCancelledEvent;
+- (void)handleUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers;
+- (void)handleChallengeSolvedEvent;
+- (void)handleChallengeCancelledEvent;
 
 @end
 

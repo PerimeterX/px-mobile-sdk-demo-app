@@ -2,7 +2,6 @@ package com.perimeterx_sdk_demo;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +16,7 @@ import com.facebook.soloader.SoLoader;
 import com.perimeterx.mobile_sdk.PerimeterX;
 import com.perimeterx.mobile_sdk.PerimeterXDelegate;
 import com.perimeterx.mobile_sdk.main.PXPolicy;
+import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType;
 import com.perimeterx_sdk_demo.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -67,13 +67,15 @@ public class MainApplication extends Application implements ReactApplication, Pe
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
-        PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, false, success -> {
-            return null;
-        });
-
         PXPolicy policy = new PXPolicy();
-        policy.setRequestsInterceptedAutomaticallyEnabled(false);
-        PerimeterX.INSTANCE.setPolicy(policy, "PXj9y4Q8Em");
+        policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
+        policy.setDoctorCheckEnabled(false);
+        try {
+            PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
+        }
+        catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
     /**
@@ -110,17 +112,24 @@ public class MainApplication extends Application implements ReactApplication, Pe
     // PerimeterXDelegate
 
     @Override
-    public void perimeterxRequestBlockedHandler(@NonNull String s) {
-
+    public void perimeterxChallengeCancelledHandler(@NonNull String s) {
+        PerimeterXModule.shared.handleChallengeCancelledEvent();
     }
 
     @Override
     public void perimeterxChallengeSolvedHandler(@NonNull String s) {
-        PerimeterXModule.shared.sendChallengeSolvedEvent();
+        PerimeterXModule.shared.handleChallengeSolvedEvent();
     }
 
     @Override
-    public void perimeterxChallengeCancelledHandler(@NonNull String s) {
-        PerimeterXModule.shared.sendChallengeCancelledEvent();
+    public void perimeterxHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
+        if (PerimeterXModule.shared != null) {
+            PerimeterXModule.shared.handleUpdatedHeaders(hashMap);
+        }
+    }
+
+    @Override
+    public void perimeterxRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
+
     }
 }

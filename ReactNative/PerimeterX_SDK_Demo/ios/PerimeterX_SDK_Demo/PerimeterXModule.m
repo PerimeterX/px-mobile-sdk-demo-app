@@ -5,7 +5,6 @@ static NSString *pxNewHeaders = @"PxNewHeaders";
 static NSString *pxChallengeResult = @"PxChallengeResult";
 static NSString *pxSolved = @"solved";
 static NSString *pxCancelled = @"cancelled";
-static NSString *pxTrue = @"true";
 static NSString *pxFalse = @"false";
 
 @implementation PerimeterXModule
@@ -32,17 +31,17 @@ static PerimeterXModule *shared = nil;
   return shared;
 }
 
-- (void)sendUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers {
+- (void)handleUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers {
   NSData *data = [NSJSONSerialization dataWithJSONObject:headers options:0 error:nil];
   NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   [self sendEventWithName:pxNewHeaders body:json];
 }
 
-- (void)sendChallengeSolvedEvent {
+- (void)handleChallengeSolvedEvent {
   [self sendEventWithName:pxChallengeResult body:pxSolved];
 }
 
-- (void)sendChallengeCancelledEvent {
+- (void)handleChallengeCancelledEvent {
   [self sendEventWithName:pxChallengeResult body:pxCancelled];
 }
 
@@ -58,8 +57,13 @@ RCT_EXPORT_METHOD(getHTTPHeaders:(RCTResponseSenderBlock)callback) {
 RCT_EXPORT_METHOD(handleResponse:(NSString *)response code:(NSInteger)code url:(NSString *)url callback:(RCTResponseSenderBlock)callback) {
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   NSHTTPURLResponse *httpURLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:url] statusCode:code HTTPVersion:nil headerFields:nil];
-  BOOL handled = [PerimeterX handleResponseForAppId:nil data:data response:httpURLResponse];
-  callback(@[handled ? pxTrue : pxFalse]);
+  BOOL handled = [PerimeterX handleResponseWithResponse:httpURLResponse data:data forAppId:nil callback:^(enum PerimeterXChallengeResult result) {
+    callback(@[(result == PerimeterXChallengeResultSolved ? pxSolved : pxCancelled)]);
+    
+  }];
+  if (!handled) {
+    callback(@[pxFalse]);
+  }
 }
 
 @end
