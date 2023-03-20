@@ -55,7 +55,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   
   PXPolicy *policy = [[PXPolicy alloc] init];
   policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionTypeNone;
-  policy.doctorCheckEnabled = NO;
+  policy.doctorCheckEnabled = YES;
   NSError *error = nil;
   [PerimeterX startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
   if (error != nil) {

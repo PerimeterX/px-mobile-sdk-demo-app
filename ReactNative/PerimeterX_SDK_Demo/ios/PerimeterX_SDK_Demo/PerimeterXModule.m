@@ -47,22 +47,28 @@ static PerimeterXModule *shared = nil;
 
 RCT_EXPORT_MODULE(PerimeterXModule);
 
-RCT_EXPORT_METHOD(getHTTPHeaders:(RCTResponseSenderBlock)callback) {
+RCT_REMAP_METHOD(getHTTPHeaders,
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject) {
   NSDictionary<NSString *, NSString *> *headers = [PerimeterX headersForURLRequestForAppId:nil];
   NSData *data = [NSJSONSerialization dataWithJSONObject:headers options:0 error:nil];
   NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  callback(@[json]);
+  resolve(@[json]);
 }
 
-RCT_EXPORT_METHOD(handleResponse:(NSString *)response code:(NSInteger)code url:(NSString *)url callback:(RCTResponseSenderBlock)callback) {
+RCT_REMAP_METHOD(handleResponse,
+                 rsponse:(NSString *)response
+                 code:(NSInteger)code
+                 url:(NSString *)url
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject) {
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   NSHTTPURLResponse *httpURLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:url] statusCode:code HTTPVersion:nil headerFields:nil];
   BOOL handled = [PerimeterX handleResponseWithResponse:httpURLResponse data:data forAppId:nil callback:^(enum PerimeterXChallengeResult result) {
-    callback(@[(result == PerimeterXChallengeResultSolved ? pxSolved : pxCancelled)]);
-    
+    resolve(@[(result == PerimeterXChallengeResultSolved ? pxSolved : pxCancelled)]);
   }];
   if (!handled) {
-    callback(@[pxFalse]);
+    resolve(@[pxFalse]);
   }
 }
 

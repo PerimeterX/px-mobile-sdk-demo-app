@@ -69,7 +69,7 @@ public class MainApplication extends Application implements ReactApplication, Pe
 
         PXPolicy policy = new PXPolicy();
         policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
-        policy.setDoctorCheckEnabled(false);
+        policy.setDoctorCheckEnabled(true);
         try {
             PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
         }

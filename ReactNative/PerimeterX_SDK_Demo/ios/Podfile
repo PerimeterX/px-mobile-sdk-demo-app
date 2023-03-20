@@ -5,6 +5,8 @@ platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'PerimeterX_SDK_Demo' do
+  pod 'PerimeterX', '3.0.0'
+  
   config = use_native_modules!
 
   # Flags change depending on the env values.
