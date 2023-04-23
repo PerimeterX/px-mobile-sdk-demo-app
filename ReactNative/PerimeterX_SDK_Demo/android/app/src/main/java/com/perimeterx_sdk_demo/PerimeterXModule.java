@@ -3,6 +3,7 @@ package com.perimeterx_sdk_demo;
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -65,19 +66,19 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void getHTTPHeaders(Callback callBack) {
+    public void getHTTPHeaders(Promise promise) {
         JSONObject json = new JSONObject(PerimeterX.INSTANCE.headersForURLRequest(null));
-        callBack.invoke(json.toString());
+        promise.resolve(json.toString());
     }
 
     @ReactMethod
-    public void handleResponse(String response, Integer code, String url, Callback callback) {
+    public void handleResponse(String response, Integer code, String url, Promise promise) {
         boolean handled = PerimeterX.INSTANCE.handleResponse(response, null, result -> {
-            callback.invoke(result == PerimeterXChallengeResult.SOLVED ? pxSolved : pxCancelled);
+            promise.resolve(result == PerimeterXChallengeResult.SOLVED ? pxSolved : pxCancelled);
             return null;
         });
         if (!handled) {
-            callback.invoke(pxFalse);
+            promise.resolve(pxFalse);
         }
     }
 }
