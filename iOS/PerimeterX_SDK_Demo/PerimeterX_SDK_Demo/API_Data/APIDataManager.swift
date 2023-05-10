@@ -98,9 +98,14 @@ class APIDataManager {
         if let error = error {
             // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`  => check that the error is "Request blocked by PerimeterX" //
             if PerimeterxManager.shared.urlRequestInterceptionType != .none {
-                let isRequestBlockedError = PerimeterX.isRequestBlockedError(error: error)
-                if isRequestBlockedError {
+                if PerimeterX.isRequestBlockedError(error: error) {
                     print("request was blocked by PX")
+                }
+                if PerimeterX.isChallengeSolvedError(error: error) {
+                    print("request was blocked by PX and user solved the challenge")
+                }
+                if PerimeterX.isChallengeCancelledError(error: error) {
+                    print("request was blocked by PX and challenge was cancelled")
                 }
             }
         }

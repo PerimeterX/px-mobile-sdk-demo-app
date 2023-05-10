@@ -35,7 +35,7 @@ class PerimeterxManager: NSObject, PerimeterXDelegate {
     // MARK: - properties
     
     private let pxAppId = "PXj9y4Q8Em"
-    let urlRequestInterceptionType: PXPolicyUrlRequestInterceptionType = .none
+    let urlRequestInterceptionType: PXPolicyUrlRequestInterceptionType = .interceptWithDelayedResponse
     
     // MARK: - PerimeterX
     

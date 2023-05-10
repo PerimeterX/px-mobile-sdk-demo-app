@@ -2,6 +2,7 @@ package com.perimeterx.android_sdk_demo
 
 import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.main.PXInterceptor
+import io.ktor.client.call.body
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
@@ -17,9 +18,15 @@ object OkHttpClientExample {
             val request: Request = Request.Builder().url(APIDataManager.loginUrl).build()
             okHttpClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) {
-                    response.body?.let { body ->
-                        if (PerimeterX.isRequestBlockedError(body.string())) {
-                            println("request was blocked")
+                    response.body?.string()?.let { responseBody ->
+                        if (PerimeterX.isRequestBlockedError(responseBody)) {
+                            println("request was blocked by PX")
+                        }
+                        if (PerimeterX.isChallengeSolvedError(responseBody)) {
+                            println("request was blocked by PX and user solved the challenge")
+                        }
+                        if (PerimeterX.isChallengeCancelledError(responseBody)) {
+                            println("request was blocked by PX and challenge was cancelled")
                         }
                     }
                 }

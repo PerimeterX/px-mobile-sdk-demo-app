@@ -10,7 +10,7 @@ object APIDataManager {
     private const val serverUrl = "https://sample-ios.pxchk.net/"
     const val loginUrl = serverUrl + "login"
     const val productsUrl = serverUrl + "products"
-    const val ktorExample = true
+    private const val ktorExample = false
 
     suspend fun sendLoginRequest(email: String, password: String) {
         if (ktorExample) {
