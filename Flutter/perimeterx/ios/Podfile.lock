@@ -1,16 +1,16 @@
 PODS:
-  - PerimeterX (3.0.3)
+  - PerimeterX (3.0.4)
 
 DEPENDENCIES:
-  - PerimeterX (= 3.0.3)
+  - PerimeterX (= 3.0.4)
 
 SPEC REPOS:
   trunk:
     - PerimeterX
 
 SPEC CHECKSUMS:
-  PerimeterX: 033b537f964dfb9629077e076e43f288089e1d42
+  PerimeterX: ddd13127d6982b8b7679d4577516aaa25b618d99
 
-PODFILE CHECKSUM: ad68dc9180b69ba4b30a6a5f609954a2b14f5fc1
+PODFILE CHECKSUM: 20bcf365b2c278c0fdc5993e18b3ee391783822f
 
 COCOAPODS: 1.11.2

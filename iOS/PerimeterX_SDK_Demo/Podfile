@@ -3,5 +3,5 @@ use_frameworks!
 
 target 'PerimeterX_SDK_Demo' do
   pod 'Alamofire', '~> 5.6.2'
-  pod 'PerimeterX', '3.0.3'
+  pod 'PerimeterX', '3.0.4'
 end
