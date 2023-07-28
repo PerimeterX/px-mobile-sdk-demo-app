@@ -8,6 +8,7 @@ import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.PerimeterXDelegate
 import com.perimeterx.mobile_sdk.main.PXPolicy
 import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType
+import com.perimeterx.mobile_sdk.main.PXStorageMethod
 
 object PerimeterxManager: PerimeterXDelegate {
 
@@ -45,6 +46,7 @@ object PerimeterxManager: PerimeterXDelegate {
     private fun start(application: Application, appId: String) {
         // Create and configure the policy //
         val policy = PXPolicy()
+        policy.storageMethod = PXStorageMethod.DATA_STORE
         policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionType.INTERCEPT_AND_RETRY_REQUEST
         policy.doctorCheckEnabled = true
 

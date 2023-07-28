@@ -17,6 +17,7 @@ import com.perimeterx.mobile_sdk.PerimeterX;
 import com.perimeterx.mobile_sdk.PerimeterXDelegate;
 import com.perimeterx.mobile_sdk.main.PXPolicy;
 import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType;
+import com.perimeterx.mobile_sdk.main.PXStorageMethod;
 import com.perimeterx_sdk_demo.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -68,6 +69,7 @@ public class MainApplication extends Application implements ReactApplication, Pe
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
         PXPolicy policy = new PXPolicy();
+        policy.setStorageMethod(PXStorageMethod.DATA_STORE);
         policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
         policy.setDoctorCheckEnabled(true);
         try {

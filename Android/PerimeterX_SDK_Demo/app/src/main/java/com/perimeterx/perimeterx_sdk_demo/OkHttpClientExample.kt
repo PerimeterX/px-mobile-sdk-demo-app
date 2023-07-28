@@ -2,14 +2,17 @@ package com.perimeterx.android_sdk_demo
 
 import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.main.PXInterceptor
-import io.ktor.client.call.body
+import com.perimeterx.mobile_sdk.main.PXTimeoutInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.util.concurrent.TimeUnit
 
 object OkHttpClientExample {
 
     private var okHttpClient: OkHttpClient = OkHttpClient.Builder()
+        .callTimeout(0, TimeUnit.SECONDS)
 //        .addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none`
+        .addInterceptor(PXTimeoutInterceptor())
         .addInterceptor(PXInterceptor()) // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
         .build()
 

@@ -16,6 +16,7 @@ class PerimeterxManager {
         fun start(application: Application) {
             try {
                 val policy = PXPolicy()
+                policy.storageMethod = PXStorageMethod.DATA_STORE
                 policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionType.NONE
                 policy.doctorCheckEnabled = true
                 PerimeterX.start(application, "PXj9y4Q8Em", null, policy)
