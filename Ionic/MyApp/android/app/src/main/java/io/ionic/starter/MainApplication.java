@@ -25,7 +25,7 @@ public class MainApplication extends Application implements PerimeterXDelegate {
         PXPolicy policy = new PXPolicy();
         policy.setStorageMethod(PXStorageMethod.DATA_STORE);
         policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
-        policy.setDoctorCheckEnabled(false);
+        policy.setDoctorCheckEnabled(true);
         try {
             PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
         }
