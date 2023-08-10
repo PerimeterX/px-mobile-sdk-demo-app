@@ -18,7 +18,7 @@ class PerimeterxManagerPlugin: CAPPlugin {
         do {
             let policy = PXPolicy()
             policy.urlRequestInterceptionType = .none
-            policy.doctorCheckEnabled = false
+            policy.doctorCheckEnabled = true
             try PerimeterX.start(appId: "PXj9y4Q8Em", delegate: nil, policy: policy)
         }
         catch {
