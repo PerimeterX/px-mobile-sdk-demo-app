@@ -41,7 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     // PerimeterX SDK - regular integration
-    implementation 'com.perimeterx.sdk:msdk:3.1.4'
+    implementation 'com.perimeterx.sdk:msdk:3.1.5'
 
     // PerimeterX SDK - manual integration
 //    implementation files('libs/PerimeterX-release.aar')
