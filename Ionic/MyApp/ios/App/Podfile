@@ -19,7 +19,7 @@ end
 
 target 'App' do
   capacitor_pods
-  pod 'PerimeterX', '3.0.6'
+  pod 'PerimeterX', '3.0.7'
   # Add your Pods here
 end
 
