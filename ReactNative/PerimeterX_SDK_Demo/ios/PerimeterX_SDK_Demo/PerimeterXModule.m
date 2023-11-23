@@ -65,10 +65,10 @@ RCT_REMAP_METHOD(handleResponse,
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   NSHTTPURLResponse *httpURLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:url] statusCode:code HTTPVersion:nil headerFields:nil];
   BOOL handled = [PerimeterX handleResponseWithResponse:httpURLResponse data:data forAppId:nil callback:^(enum PerimeterXChallengeResult result) {
-    resolve(@[(result == PerimeterXChallengeResultSolved ? pxSolved : pxCancelled)]);
+    resolve((result == PerimeterXChallengeResultSolved ? pxSolved : pxCancelled));
   }];
   if (!handled) {
-    resolve(@[pxFalse]);
+    resolve(pxFalse);
   }
 }
 
