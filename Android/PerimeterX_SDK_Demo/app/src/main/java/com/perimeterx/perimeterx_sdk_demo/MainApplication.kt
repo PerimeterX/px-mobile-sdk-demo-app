@@ -6,7 +6,6 @@ class MainApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        PerimeterxManager.start(this)
+        HumanManager.start(this)
     }
 }

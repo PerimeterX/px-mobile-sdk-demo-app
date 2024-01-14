@@ -1,19 +1,20 @@
 package com.perimeterx.android_sdk_demo
 
-import com.perimeterx.mobile_sdk.PerimeterX
-import com.perimeterx.mobile_sdk.main.PXInterceptor
-import com.perimeterx.mobile_sdk.main.PXTimeoutInterceptor
+import com.perimeterx.mobile_sdk.HumanSecurity
+import com.perimeterx.mobile_sdk.main.HSInterceptor
+import com.perimeterx.mobile_sdk.main.HSTimeoutInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.util.concurrent.TimeUnit
 
 object OkHttpClientExample {
 
+    private const val requestTimeout = 10_000
     private var okHttpClient: OkHttpClient = OkHttpClient.Builder()
         .callTimeout(0, TimeUnit.SECONDS)
-//        .addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none`
-        .addInterceptor(PXTimeoutInterceptor())
-        .addInterceptor(PXInterceptor()) // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
+//        .addInterceptor(MyInterceptor()) // An example of basic implementation. Should be added when `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none`.
+        .addInterceptor(HSTimeoutInterceptor(requestTimeout, requestTimeout, requestTimeout)) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`.
+        .addInterceptor(HSInterceptor()) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN.
         .build()
 
     fun sendLoginRequest(email: String, password: String) {
@@ -22,23 +23,23 @@ object OkHttpClientExample {
             okHttpClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) {
                     response.body?.string()?.let { responseBody ->
-                        if (PerimeterX.isRequestBlockedError(responseBody)) {
-                            println("request was blocked by PX")
+                        if (HumanSecurity.isRequestBlockedError(responseBody)) {
+                            println("Request was blocked")
                         }
-                        if (PerimeterX.isChallengeSolvedError(responseBody)) {
-                            println("request was blocked by PX and user solved the challenge")
+                        if (HumanSecurity.isChallengeSolvedError(responseBody)) {
+                            println("Request was blocked and the user solved the challenge")
                         }
-                        if (PerimeterX.isChallengeCancelledError(responseBody)) {
-                            println("request was blocked by PX and challenge was cancelled")
+                        if (HumanSecurity.isChallengeCancelledError(responseBody)) {
+                            println("Request was blocked and the challenge was cancelled")
                         }
                     }
                 }
                 else {
-                    println("request was finished")
+                    println("Request was finished")
                 }
             }
         } catch (exception: Exception) {
-            println("request was failed. exception: $exception")
+            println("Request was failed. Exception: $exception")
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.perimeterx.android_sdk_demo
 
-import com.perimeterx.mobile_sdk.PerimeterX
+import com.perimeterx.mobile_sdk.HumanSecurity
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
@@ -13,34 +13,33 @@ class MyInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().newBuilder()
 
-        // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => get HTTP headers from PerimeterX and add them to your request //
-        val headers = PerimeterX.headersForURLRequest(null)
+        // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none` => get HTTP headers from the SDK and add them to your request.
+        val headers = HumanSecurity.headersForURLRequest(null)
         for ((key, value) in headers!!) {
             newRequest.addHeader(key, value)
         }
 
         val response = chain.proceed(newRequest.build())
         if (!response.isSuccessful) {
-            // The code below is an example to how you can check that the request was blocked. This is not required
             val responseBody = response.body?.string()
             if (responseBody != null) {
-                // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`  => check that the error is "Request blocked by PerimeterX" //
-                val isRequestBlockedError = PerimeterX.isRequestBlockedError(responseBody)
+                // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`  => check that the error is "The request was blocked by HUMAN".
+                val isRequestBlockedError = HumanSecurity.isRequestBlockedError(responseBody)
                 if (isRequestBlockedError) {
-                    println("request was blocked by PX")
+                    println("Request was blocked")
                 }
 
-                // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => pass the data and response to PerimeterX to handle it //
-                val isHandledByPX = PerimeterX.handleResponse(responseBody, null) { result ->
-                    println("challenge result = $result")
+                // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none` => pass the data and response to the SDK.
+                val isHandled = HumanSecurity.handleResponse(responseBody, null) { result ->
+                    println("Challenge result = $result")
                 }
-                if (isHandledByPX) {
-                    println("block response was handled by PX")
-                    // Replace the original response with a specific blocked error
-                    return response.newBuilder().body(PerimeterX.blockedErrorBody().toResponseBody()).build()
+                if (isHandled) {
+                    println("Block response was handled by the SDK")
+                    // Replace the original response with a specific blocked error.
+                    return response.newBuilder().body(HumanSecurity.blockedErrorBody().toResponseBody()).build()
                 }
 
-                // Put back the response's body (can be read only once and we just did)
+                // Put back the response's body (can be read only once and we just did).
                 return response.newBuilder().body(responseBody.toResponseBody()).build()
             }
         }

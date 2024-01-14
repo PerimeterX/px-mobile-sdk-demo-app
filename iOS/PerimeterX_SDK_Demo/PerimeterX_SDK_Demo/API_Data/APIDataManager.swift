@@ -2,7 +2,7 @@
 //  APIDataManager.swift
 //  PerimeterX_SDK_Demo
 //
-//  Created by PerimeterX.
+//  Created by HUMAN.
 //
 
 import Foundation
@@ -86,8 +86,8 @@ class APIDataManager {
         request.httpMethod = "GET"
         
         // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => get HTTP headers from PerimeterX and add them to your request //
-        if PerimeterxManager.shared.urlRequestInterceptionType == .none {
-            let headers = PerimeterX.headersForURLRequest()
+        if HumanManager.shared.interceptorType == .none {
+            let headers = HumanSecurity.headersForURLRequest()
             request.allHTTPHeaderFields = headers
         }
         
@@ -96,28 +96,28 @@ class APIDataManager {
     
     private func handleResponse(data: Data?, response: URLResponse?, error: Error?) {
         if let error = error {
-            // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`  => check that the error is "Request blocked by PerimeterX" //
-            if PerimeterxManager.shared.urlRequestInterceptionType != .none {
-                if PerimeterX.isRequestBlockedError(error: error) {
-                    print("request was blocked by PX")
+            // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none` => check that the error is "the request was blocked by HUMAN".
+            if HumanManager.shared.interceptorType != .none {
+                if HumanSecurity.isRequestBlockedError(error: error) {
+                    print("Request was blocked")
                 }
-                if PerimeterX.isChallengeSolvedError(error: error) {
-                    print("request was blocked by PX and user solved the challenge")
+                if HumanSecurity.isChallengeSolvedError(error: error) {
+                    print("Request was blocked and the user solved the challenge")
                 }
-                if PerimeterX.isChallengeCancelledError(error: error) {
-                    print("request was blocked by PX and challenge was cancelled")
+                if HumanSecurity.isChallengeCancelledError(error: error) {
+                    print("Request was blocked and the challenge was cancelled")
                 }
             }
         }
         
         if let data = data, let response = response as? HTTPURLResponse {
-            // When PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none` => pass the data and response to PerimeterX to handle it //
-            if PerimeterxManager.shared.urlRequestInterceptionType == .none {
-                let isHandledByPX = PerimeterX.handleResponse(response: response, data: data) { result in
-                    print("challenge result = \(result)")
+            // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none` => pass the data and response to the SDK.
+            if HumanManager.shared.interceptorType == .none {
+                let isHandled = HumanSecurity.handleResponse(response: response, data: data) { result in
+                    print("Challenge result = \(result)")
                 }
-                if isHandledByPX {
-                    print("block response was handled by PX")
+                if isHandled {
+                    print("Block response was handled by the SDK")
                 }
             }
         }

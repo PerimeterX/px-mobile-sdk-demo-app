@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PerimeterX_SDK_Demo
 //
-//  Created by PerimeterX.
+//  Created by HUMAN.
 //
 
 import UIKit
@@ -10,12 +10,15 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    // MARK: - properties
+    
+    var window: UIWindow?
+    
     // MARK: - UIApplicationDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Start PerimeterX SDK here //
-        PerimeterxManager.shared.start()
+        HumanManager.shared.start()
         
         if #available(iOS 13, *) {}
         else {
@@ -38,8 +41,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         
     }
-    
-    // MARK: - properties
-    
-    var window: UIWindow?
 }

@@ -3,14 +3,11 @@ package com.perimeterx.android_sdk_demo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import com.perimeterx.mobile_sdk.PerimeterX
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginActivity: AppCompatActivity() {
-
-    // AppCompatActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

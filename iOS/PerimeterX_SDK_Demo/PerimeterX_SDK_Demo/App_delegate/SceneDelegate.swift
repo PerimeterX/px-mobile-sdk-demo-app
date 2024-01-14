@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  PerimeterX_SDK_Demo
 //
-//  Created by PerimeterX.
+//  Created by HUMAN.
 //
 
 import UIKit

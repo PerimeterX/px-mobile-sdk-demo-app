@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  PerimeterX_SDK_Demo
 //
-//  Created by PerimeterX.
+//  Created by HUMAN.
 //
 
 import UIKit
@@ -14,18 +14,18 @@ protocol LoginViewControllerDelegate: NSObjectProtocol {
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    // MARK: - properties
+    
+    weak var delegate: LoginViewControllerDelegate?
+    @IBOutlet private weak var versionLabel: UILabel!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        versionLabel.text = "PerimeterX iOS SDK v\(PerimeterX.sdkVersion())"
-    }
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
+        versionLabel.text = "HUMAN Security SDK v\(HumanSecurity.sdkVersion())"
     }
     
     // MARK: - IBAction
@@ -44,11 +44,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - properties
+    // MARK: - UITextFieldDelegate
     
-    weak var delegate: LoginViewControllerDelegate?
-    @IBOutlet private weak var versionLabel: UILabel!
-    @IBOutlet private weak var loginButton: UIButton!
-    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }
-
