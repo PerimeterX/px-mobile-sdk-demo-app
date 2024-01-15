@@ -12,9 +12,9 @@ object OkHttpClientExample {
     private const val requestTimeout = 10_000
     private var okHttpClient: OkHttpClient = OkHttpClient.Builder()
         .callTimeout(0, TimeUnit.SECONDS)
-//        .addInterceptor(MyInterceptor()) // An example of basic implementation. Should be added when `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none`.
-        .addInterceptor(HSTimeoutInterceptor(requestTimeout, requestTimeout, requestTimeout)) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`.
-        .addInterceptor(HSInterceptor()) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN.
+//        .addInterceptor(MyInterceptor()) // An example of basic implementation. Should be added when `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none`.
+        .addInterceptor(HSTimeoutInterceptor(requestTimeout, requestTimeout, requestTimeout)) // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`.
+        .addInterceptor(HSInterceptor()) // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN.
         .build()
 
     fun sendLoginRequest(email: String, password: String) {

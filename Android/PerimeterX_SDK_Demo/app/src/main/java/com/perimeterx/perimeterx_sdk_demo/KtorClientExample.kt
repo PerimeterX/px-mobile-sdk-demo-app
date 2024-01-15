@@ -15,12 +15,12 @@ object KtorClientExample {
     private const val requestTimeout = 10_000
     private val ktorHttpClient: HttpClient = HttpClient(OkHttp) {
         install(HttpTimeout) {
-            requestTimeoutMillis = HttpTimeout.INFINITE_TIMEOUT_MS // Timeout must be set to be `INFINITE_TIMEOUT_MS` when `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`.
+            requestTimeoutMillis = HttpTimeout.INFINITE_TIMEOUT_MS // Timeout must be set to be `INFINITE_TIMEOUT_MS` when `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`.
         }
         engine {
-//            addInterceptor(MyInterceptor()) // An example of basic implementation. Should be added when `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none`.
-            addInterceptor(HSTimeoutInterceptor(requestTimeout, requestTimeout, requestTimeout)) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`.
-            addInterceptor(HSInterceptor()) // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN.
+//            addInterceptor(MyInterceptor()) // An example of basic implementation. Should be added when `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none`.
+            addInterceptor(HSTimeoutInterceptor(requestTimeout, requestTimeout, requestTimeout)) // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`.
+            addInterceptor(HSInterceptor()) // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN.
         }
     }
 

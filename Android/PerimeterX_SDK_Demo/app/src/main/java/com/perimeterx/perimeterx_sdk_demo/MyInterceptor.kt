@@ -13,7 +13,7 @@ class MyInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().newBuilder()
 
-        // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none` => get HTTP headers from the SDK and add them to your request.
+        // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none` => get HTTP headers from the SDK and add them to your request.
         val headers = HumanSecurity.headersForURLRequest(null)
         for ((key, value) in headers!!) {
             newRequest.addHeader(key, value)
@@ -23,13 +23,13 @@ class MyInterceptor: Interceptor {
         if (!response.isSuccessful) {
             val responseBody = response.body?.string()
             if (responseBody != null) {
-                // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to any value rather than `HSAutomaticInterceptorType/none`  => check that the error is "The request was blocked by HUMAN".
+                // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to any value rather than `HSAutomaticInterceptorType/none`  => check that the error is "The request was blocked by HUMAN".
                 val isRequestBlockedError = HumanSecurity.isRequestBlockedError(responseBody)
                 if (isRequestBlockedError) {
                     println("Request was blocked")
                 }
 
-                // When `HSPolicy.automaticInterceptorPolicy.urlRequestInterceptionType` is set to `HSAutomaticInterceptorType/none` => pass the data and response to the SDK.
+                // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none` => pass the data and response to the SDK.
                 val isHandled = HumanSecurity.handleResponse(responseBody, null) { result ->
                     println("Challenge result = $result")
                 }

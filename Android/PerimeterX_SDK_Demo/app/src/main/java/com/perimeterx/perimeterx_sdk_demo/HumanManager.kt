@@ -18,7 +18,7 @@ object HumanManager: HumanDelegate {
 
         // Set the automatic interceptor's type.
         // Set it to `NONE` in order to disable it and then use `MyInterceptor`.
-        policy.automaticInterceptorPolicy.urlRequestInterceptionType =
+        policy.automaticInterceptorPolicy.interceptorType =
             HSAutomaticInterceptorType.INTERCEPT_AND_RETRY_REQUEST
 
         // Enable the Doctor App - a tool that helps you to verify the integration.
