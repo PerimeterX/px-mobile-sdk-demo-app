@@ -4,9 +4,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PerimeterXModule : RCTEventEmitter <RCTBridgeModule>
+@interface HumanModule : RCTEventEmitter <RCTBridgeModule>
 
-+ (PerimeterXModule *)shared;
++ (HumanModule *)shared;
 - (void)handleUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers;
 - (void)handleChallengeSolvedEvent;
 - (void)handleChallengeCancelledEvent;

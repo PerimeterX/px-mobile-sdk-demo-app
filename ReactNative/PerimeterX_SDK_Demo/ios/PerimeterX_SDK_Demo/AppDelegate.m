@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import "PerimeterXModule.h"
+#import "HumanModule.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -53,16 +53,16 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
     rootView.backgroundColor = [UIColor whiteColor];
   }
   
-  PXPolicy *policy = [[PXPolicy alloc] init];
-  policy.urlRequestInterceptionType = PXPolicyUrlRequestInterceptionTypeNone;
-  policy.doctorCheckEnabled = YES;
+  HSPolicy *policy = [[HSPolicy alloc] init];
+  policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorTypeNone;
+  policy.doctorAppPolicy.enabled = YES;
   NSError *error = nil;
-  [PerimeterX startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
+  [HumanSecurity startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
   if (error != nil) {
-    NSLog(@"failed to start. error: %@", error.localizedDescription);
+    NSLog(@"failed to start. error: %@", error);
   }
   
-  [[PerimeterXModule shared] startObserving];
+  [[HumanModule shared] startObserving];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
@@ -144,20 +144,20 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 // MARK: - PerimeterXDelegate
 
-- (void)perimeterxDidRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
-  
+- (void)humanDidRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
+  NSLog(@"Request was blcoked. URL = %@", url);
 }
 
-- (void)perimeterxDidChallengeSolvedForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] handleChallengeSolvedEvent];
+- (void)humanDidChallengeSolvedForAppId:(NSString *)appId {
+  [[HumanModule shared] handleChallengeSolvedEvent];
 }
 
-- (void)perimeterxDidChallengeCancelledForAppId:(NSString *)appId {
-  [[PerimeterXModule shared] handleChallengeCancelledEvent];
+- (void)humanDidChallengeCancelledForAppId:(NSString *)appId {
+  [[HumanModule shared] handleChallengeCancelledEvent];
 }
 
-- (void)perimeterxHeadersWereUpdatedWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
-  [[PerimeterXModule shared] handleUpdatedHeaders:headers];
+- (void)humanHeadersWereUpdatedWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
+  [[HumanModule shared] handleUpdatedHeaders:headers];
 }
 
 @end

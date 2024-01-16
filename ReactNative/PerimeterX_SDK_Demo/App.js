@@ -29,39 +29,39 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* Import PerimeterXModule */
+/* Import HumanModule */
 import {NativeModules, NativeEventEmitter} from 'react-native';
 import type {Message} from 'react-native/Libraries/LogBox/Data/parseLogBoxLog';
-const {PerimeterXModule} = NativeModules;
+const {HumanModule} = NativeModules;
 
 /* Create new native event emitter */
-const pxEventEmitter = new NativeEventEmitter(PerimeterXModule);
+const humanEventEmitter = new NativeEventEmitter(HumanModule);
 
-var pxHeader = null;
+var humanHeaders = null;
 
 /* Add new headers listener */
 const onAddNewHeaders = headers => {
   const obj = JSON.parse(headers);
-  console.log(`[PX] got new px headers from event: ${JSON.stringify(obj)}`);
-  pxHeader = obj;
+  console.log(`[HUMAN] got new http headers from event: ${JSON.stringify(obj)}`);
+  humanHeaders = obj;
 };
 
 /* challenge solved listener */
 const onChallengeResult = result => {
   if (result === 'solved') {
-    console.log('[PX] got challenge solved event');
+    console.log('[HUMAN] got challenge solved event');
   } else if (result === 'cancelled') {
-    console.log('[PX] got challenge cancelled event');
+    console.log('[HUMAN] got challenge cancelled event');
   }
 };
 
-const subscriptionPxNewHeaders = pxEventEmitter.addListener(
-  'PxNewHeaders',
+const subscriptionHumanNewHeaders = humanEventEmitter.addListener(
+  'HumanNewHeaders',
   onAddNewHeaders,
 );
 
-const subscriptionPxChallengeResult = pxEventEmitter.addListener(
-  'PxChallengeResult',
+const subscriptionHumanChallengeResult = humanEventEmitter.addListener(
+  'HumanChallengeResult',
   onChallengeResult,
 );
 
@@ -74,19 +74,19 @@ const App: () => Node = () => {
 
   const sendRequest = async () => {
     /* Get HTTP headers */
-    if (pxHeader == null) {
-      const headers = await PerimeterXModule.getHTTPHeaders();
+    if (humanHeaders == null) {
+      const headers = await HumanModule.getHTTPHeaders();
       const obj = JSON.parse(headers);
-      console.log(`[PX] got px headers from getter: ${JSON.stringify(obj)}`);
+      console.log(`[HUMAN] got http headers from getter: ${JSON.stringify(obj)}`);
       await sentRequest(obj);
     } else {
-      await sentRequest(pxHeader);
+      await sentRequest(humanHeaders);
     }
   };
 
   async function sentRequest(headers) {
     console.log(
-      `[PX] sending request with headers: ${JSON.stringify(headers)}`,
+      `[HUMAN] sending request with headers: ${JSON.stringify(headers)}`,
     );
     try {
       const url = 'https://sample-ios.pxchk.net/login';
@@ -97,9 +97,9 @@ const App: () => Node = () => {
 
       const json = await response.json();
 
-      console.log('[PX] sending response to native module');
+      console.log('[HUMAN] sending response to native module');
       /* Send the response to the SDK */
-      const result = await PerimeterXModule.handleResponse(
+      const result = await HumanModule.handleResponse(
         JSON.stringify(json),
         response.status,
         url,
@@ -110,16 +110,16 @@ const App: () => Node = () => {
         'solved' - challenge solved
         'cancelled' - challenge cancelled
       */
-      console.log(`[PX] result: ${result}`);
+      console.log(`[HUMAN] result: ${result}`);
       if (result === 'solved') {
-        console.log('[PX] challenge solved');
+        console.log('[HUMAN] challenge solved');
         wait(5000); // not required. just for simulation.
         await sendRequest();
       } else if (result === 'false') {
-        console.log('[PX] request finished successfully');
+        console.log('[HUMAN] request finished successfully');
         Alert.alert('request finished successfully');
       } else if (result === 'cancelled') {
-        console.log('[PX] challenge cancelled');
+        console.log('[HUMAN] challenge cancelled');
       }
     } catch (error) {
       console.error(error);

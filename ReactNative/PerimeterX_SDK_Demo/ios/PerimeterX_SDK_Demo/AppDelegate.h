@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 @import PerimeterX_SDK;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, PerimeterXDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, HumanDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
 

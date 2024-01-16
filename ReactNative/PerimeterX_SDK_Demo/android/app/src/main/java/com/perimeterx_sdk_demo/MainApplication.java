@@ -13,17 +13,16 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
-import com.perimeterx.mobile_sdk.PerimeterX;
-import com.perimeterx.mobile_sdk.PerimeterXDelegate;
-import com.perimeterx.mobile_sdk.main.PXPolicy;
-import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType;
-import com.perimeterx.mobile_sdk.main.PXStorageMethod;
+import com.perimeterx.mobile_sdk.HumanDelegate;
+import com.perimeterx.mobile_sdk.HumanSecurity;
+import com.perimeterx.mobile_sdk.main.policy.HSAutomaticInterceptorType;
+import com.perimeterx.mobile_sdk.main.policy.HSPolicy;
 import com.perimeterx_sdk_demo.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication, PerimeterXDelegate {
+public class MainApplication extends Application implements ReactApplication, HumanDelegate {
 
     private final ReactNativeHost mReactNativeHost =
             new ReactNativeHost(this) {
@@ -38,7 +37,7 @@ public class MainApplication extends Application implements ReactApplication, Pe
                     List<ReactPackage> packages = new PackageList(this).getPackages();
                     // Packages that cannot be autolinked yet can be added manually here, for example:
                     // packages.add(new MyReactNativePackage());
-                    packages.add(new PerimeterXPackage());
+                    packages.add(new HumanPackage());
                     return packages;
                 }
 
@@ -68,12 +67,11 @@ public class MainApplication extends Application implements ReactApplication, Pe
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
-        PXPolicy policy = new PXPolicy();
-        policy.setStorageMethod(PXStorageMethod.DATA_STORE);
-        policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
-        policy.setDoctorCheckEnabled(true);
+        HSPolicy policy = new HSPolicy();
+        policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
+        policy.getDoctorAppPolicy().setEnabled(true);
         try {
-            PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
+            HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
         }
         catch (Exception exception) {
             exception.printStackTrace();
@@ -114,24 +112,24 @@ public class MainApplication extends Application implements ReactApplication, Pe
     // PerimeterXDelegate
 
     @Override
-    public void perimeterxChallengeCancelledHandler(@NonNull String s) {
-        PerimeterXModule.shared.handleChallengeCancelledEvent();
+    public void humanChallengeCancelledHandler(@NonNull String s) {
+        HumanModule.shared.handleChallengeCancelledEvent();
     }
 
     @Override
-    public void perimeterxChallengeSolvedHandler(@NonNull String s) {
-        PerimeterXModule.shared.handleChallengeSolvedEvent();
+    public void humanChallengeSolvedHandler(@NonNull String s) {
+        HumanModule.shared.handleChallengeSolvedEvent();
     }
 
     @Override
-    public void perimeterxHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
-        if (PerimeterXModule.shared != null) {
-            PerimeterXModule.shared.handleUpdatedHeaders(hashMap);
+    public void humanHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
+        if (HumanModule.shared != null) {
+            HumanModule.shared.handleUpdatedHeaders(hashMap);
         }
     }
 
     @Override
-    public void perimeterxRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
+    public void humanRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
 
     }
 }
