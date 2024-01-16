@@ -2,10 +2,12 @@ package com.perimeterx_sdk_demo;
 
 import android.app.Application;
 import android.content.Context;
-
+import android.util.Log;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -18,9 +20,6 @@ import com.perimeterx.mobile_sdk.HumanSecurity;
 import com.perimeterx.mobile_sdk.main.policy.HSAutomaticInterceptorType;
 import com.perimeterx.mobile_sdk.main.policy.HSPolicy;
 import com.perimeterx_sdk_demo.newarchitecture.MainApplicationReactNativeHost;
-import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication, HumanDelegate {
 
@@ -33,10 +32,7 @@ public class MainApplication extends Application implements ReactApplication, Hu
 
                 @Override
                 protected List<ReactPackage> getPackages() {
-                    @SuppressWarnings("UnnecessaryLocalVariable")
                     List<ReactPackage> packages = new PackageList(this).getPackages();
-                    // Packages that cannot be autolinked yet can be added manually here, for example:
-                    // packages.add(new MyReactNativePackage());
                     packages.add(new HumanPackage());
                     return packages;
                 }
@@ -62,11 +58,29 @@ public class MainApplication extends Application implements ReactApplication, Hu
     @Override
     public void onCreate() {
         super.onCreate();
-        // If you opted-in for the New Architecture, we enable the TurboModule system
         ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
-        SoLoader.init(this, /* native exopackage */ false);
+        SoLoader.init(this, false);
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
+        startHumanSDK();
+    }
+
+    private static void initializeFlipper(
+            Context context, ReactInstanceManager reactInstanceManager) {
+        if (BuildConfig.DEBUG) {
+            try {
+                Class<?> aClass = Class.forName("com.perimeterx_sdk_demo.ReactNativeFlipper");
+                aClass
+                        .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
+                        .invoke(null, context, reactInstanceManager);
+            } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException |
+                     InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void startHumanSDK() {
         HSPolicy policy = new HSPolicy();
         policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
         policy.getDoctorAppPolicy().setEnabled(true);
@@ -74,42 +88,14 @@ public class MainApplication extends Application implements ReactApplication, Hu
             HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
         }
         catch (Exception exception) {
-            exception.printStackTrace();
+            Log.e("MainApplication","Exception: " + exception.getMessage());
         }
     }
 
-    /**
-     * Loads Flipper in React Native templates. Call this in the onCreate method with something like
-     * initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-     *
-     * @param context
-     * @param reactInstanceManager
-     */
-    private static void initializeFlipper(
-            Context context, ReactInstanceManager reactInstanceManager) {
-        if (BuildConfig.DEBUG) {
-            try {
-        /*
-         We use reflection here to pick up the class that initializes Flipper,
-        since Flipper library is not available in release mode
-        */
-                Class<?> aClass = Class.forName("com.perimeterx_sdk_demo.ReactNativeFlipper");
-                aClass
-                        .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
-                        .invoke(null, context, reactInstanceManager);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    @Override
+    public void humanRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
 
-    // PerimeterXDelegate
+    }
 
     @Override
     public void humanChallengeCancelledHandler(@NonNull String s) {
@@ -126,10 +112,5 @@ public class MainApplication extends Application implements ReactApplication, Hu
         if (HumanModule.shared != null) {
             HumanModule.shared.handleUpdatedHeaders(hashMap);
         }
-    }
-
-    @Override
-    public void humanRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
-
     }
 }

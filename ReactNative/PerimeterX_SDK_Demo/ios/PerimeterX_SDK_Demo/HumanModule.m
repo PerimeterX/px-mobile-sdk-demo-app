@@ -1,15 +1,19 @@
 #import "HumanModule.h"
 @import PerimeterX_SDK;
 
-static NSString *strNewHeaders = @"PxNewHeaders";
-static NSString *strChallengeResult = @"PxChallengeResult";
+static NSString *strNewHeaders = @"HumanNewHeaders";
+static NSString *strChallengeResult = @"HumanChallengeResult";
 static NSString *strSolved = @"solved";
 static NSString *strCancelled = @"cancelled";
 static NSString *strFalse = @"false";
 
 @implementation HumanModule
 
-// MARK: - NSObject
+static HumanModule *shared = nil;
+
++ (HumanModule *)shared {
+  return shared;
+}
 
 - (instancetype)init {
   self = [super init];
@@ -17,18 +21,8 @@ static NSString *strFalse = @"false";
   return self;
 }
 
-// MARK: - RCTEventEmitter
-
 - (NSArray<NSString *> *)supportedEvents {
   return @[strNewHeaders, strChallengeResult];
-}
-
-// MARK: - PX Module
-
-static HumanModule *shared = nil;
-
-+ (HumanModule *)shared {
-  return shared;
 }
 
 - (void)handleUpdatedHeaders:(NSDictionary<NSString *,NSString *> *)headers {
@@ -45,7 +39,7 @@ static HumanModule *shared = nil;
   [self sendEventWithName:strChallengeResult body:strCancelled];
 }
 
-RCT_EXPORT_MODULE(PerimeterXModule);
+RCT_EXPORT_MODULE(HumanModule);
 
 RCT_REMAP_METHOD(getHTTPHeaders,
                  resolver:(RCTPromiseResolveBlock)resolve
