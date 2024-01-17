@@ -53,16 +53,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
     rootView.backgroundColor = [UIColor whiteColor];
   }
   
-  HSPolicy *policy = [[HSPolicy alloc] init];
-  policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorTypeNone;
-  policy.doctorAppPolicy.enabled = YES;
-  NSError *error = nil;
-  [HumanSecurity startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
-  if (error != nil) {
-    NSLog(@"failed to start. error: %@", error);
-  }
-  
-  [[HumanModule shared] startObserving];
+  [self startHumanSDK];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
@@ -142,7 +133,23 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 #endif
 
-// MARK: - PerimeterXDelegate
+#pragma mark - Human
+
+- (void)startHumanSDK {
+  HSPolicy *policy = [[HSPolicy alloc] init];
+  policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorTypeNone;
+  policy.doctorAppPolicy.enabled = YES;
+  
+  NSError *error = nil;
+  [HumanSecurity startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
+  if (error != nil) {
+    NSLog(@"Failed to start. Error: %@", error);
+  }
+  
+  [[HumanModule shared] startObserving];
+}
+
+#pragma mark - HumanDelegate
 
 - (void)humanDidRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
   NSLog(@"Request was blcoked. URL = %@", url);
