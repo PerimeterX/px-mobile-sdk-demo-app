@@ -9,7 +9,7 @@ class MainActivity: FlutterActivity() {
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.perimeterx.demo/perimeterx").setMethodCallHandler {
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.humansecurity/sdk").setMethodCallHandler {
                 call, result ->
             HumanManager.handleEvent(call, result)
         }

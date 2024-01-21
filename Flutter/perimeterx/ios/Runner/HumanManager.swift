@@ -19,7 +19,7 @@ class HumanManager {
     }
     
     func setupChannel(with controller: FlutterViewController) {
-        let humanChannel = FlutterMethodChannel(name: "com.humansecurity.demo/humansecurity", binaryMessenger: controller.binaryMessenger)
+        let humanChannel = FlutterMethodChannel(name: "com.humansecurity/sdk", binaryMessenger: controller.binaryMessenger)
         humanChannel.setMethodCallHandler({(call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             if call.method == "humanGetHeaders" {
                 var json: String?
@@ -34,7 +34,7 @@ class HumanManager {
                 result(json)
             }
             else if call.method == "humanHandleResponse" {
-                if let response = call.arguments as? String, let data = response.data(using: .utf8), let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil) {
+                if let response = call.arguments as? String, let data = response.data(using: .utf8), let httpURLResponse = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 403, httpVersion: nil, headerFields: nil) {
                     let handled = HumanSecurity.handleResponse(response: httpURLResponse, data: data) { challengeResult in
                         result(challengeResult == .solved ? "solved" : "cancelled")
                     }
