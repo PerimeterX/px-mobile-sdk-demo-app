@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class LoginView extends StatelessWidget {
   
   static const routeName = '/';
-  static const humanPlatform = MethodChannel('com.humansecurity.demo/humansecurity');
+  static const humanPlatform = MethodChannel('com.humansecurity/sdk');
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,8 @@ class LoginView extends StatelessWidget {
           print("challenge was cancelled");
         }
       }
-    } on PlatformException catch (e) {
-      print("failed to get human's headers: '${e.message}'.");
+    } on PlatformException catch (exception) {
+      print("failed to get human's headers: '${exception.message}'.");
     }
   }
 }
