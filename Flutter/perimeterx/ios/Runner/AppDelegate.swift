@@ -7,10 +7,10 @@ import Flutter
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GeneratedPluginRegistrant.register(with: self)
         
-        PerimeterxManager.shared.start()
+        HumanManager.shared.start()
         
         let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-        PerimeterxManager.shared.setupChannel(with: controller)
+        HumanManager.shared.setupChannel(with: controller)
         
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
