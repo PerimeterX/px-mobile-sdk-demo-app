@@ -4,14 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    namespace 'com.perimeterx.android_sdk_demo'
+
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.perimeterx.android_sdk_demo"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
-        versionName "3.0.0"
+        versionName "4.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,20 +39,18 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
-    // PerimeterX SDK - regular integration
+    // HUMAN SDK - regular integration
     implementation 'com.perimeterx.sdk:msdk:4.0.0'
 
-    // PerimeterX SDK - manual integration
-    implementation files('libs/PerimeterX-release.aar')
-    implementation 'androidx.core:core-ktx:1.10.1' // max v1.10.1
-    implementation 'androidx.appcompat:appcompat:1.6.1' // min v1.0.0
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // min v2.0.0
-    implementation 'androidx.lifecycle:lifecycle-process:2.6.2' // min v2.6.0
-    implementation 'androidx.datastore:datastore-preferences:1.0.0' // exact v1.0.0
-    implementation 'com.google.android.material:material:1.9.0' // min v1.6.0 ; max v1.9.0
-    implementation 'com.google.android.gms:play-services-instantapps:18.0.1' // min v11.0.0
-    implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
-    implementation 'io.ktor:ktor-client-okhttp:2.3.4' // min v2.2.1 ; max 2.3.4
-
-
+    // HUMAN SDK - manual integration
+//    implementation files('libs/PerimeterX-release.aar')
+//    implementation 'androidx.core:core-ktx:1.12.0' // any version
+//    implementation 'androidx.appcompat:appcompat:1.6.1' // min v1.0.0
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // min v2.0.0
+//    implementation 'androidx.lifecycle:lifecycle-process:2.7.0' // min v2.6.0
+//    implementation 'androidx.datastore:datastore-preferences:1.0.0' // exact v1.0.0
+//    implementation 'com.google.android.material:material:1.11.0' // min v1.6.0
+//    implementation 'com.google.android.gms:play-services-instantapps:18.0.1' // min v11.0.0
+//    implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
+//    implementation 'io.ktor:ktor-client-okhttp:2.3.7' // min v2.2.1
 }
