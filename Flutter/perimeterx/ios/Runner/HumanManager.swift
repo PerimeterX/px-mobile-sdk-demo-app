@@ -25,7 +25,7 @@ class HumanManager {
                 var json: String?
                 do {
                     let headers = HumanSecurity.headersForURLRequest()
-                    let data = try JSONSerialization.data(withJSONObject: headers!)
+                    let data = try JSONSerialization.data(withJSONObject: headers)
                     json = String(data: data, encoding: .utf8)
                 }
                 catch {

@@ -25,7 +25,7 @@ class HumanManager: CAPPlugin {
     }
     
     @objc func getHttpHeaders(_ call: CAPPluginCall) {
-        call.resolve(HumanSecurity.headersForURLRequest()!)
+        call.resolve(HumanSecurity.headersForURLRequest())
     }
     
     @objc func handleResponse(_ call: CAPPluginCall) {

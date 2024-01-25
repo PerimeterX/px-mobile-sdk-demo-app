@@ -62,7 +62,7 @@ public class HumanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getHTTPHeaders(Promise promise) {
-        JSONObject json = new JSONObject(Objects.requireNonNull(HumanSecurity.INSTANCE.headersForURLRequest(null)));
+        JSONObject json = new JSONObject(HumanSecurity.INSTANCE.headersForURLRequest(null));
         promise.resolve(json.toString());
     }
 

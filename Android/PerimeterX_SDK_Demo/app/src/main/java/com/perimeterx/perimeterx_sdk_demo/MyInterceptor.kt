@@ -15,7 +15,7 @@ class MyInterceptor: Interceptor {
 
         // When `HSPolicy.automaticInterceptorPolicy.interceptorType` is set to `HSAutomaticInterceptorType/none` => get HTTP headers from the SDK and add them to your request.
         val headers = HumanSecurity.headersForURLRequest(null)
-        for ((key, value) in headers!!) {
+        for ((key, value) in headers) {
             newRequest.addHeader(key, value)
         }
 

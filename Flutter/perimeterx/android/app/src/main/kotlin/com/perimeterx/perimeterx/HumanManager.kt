@@ -27,7 +27,7 @@ class HumanManager {
 
         fun handleEvent(call: MethodCall, result: MethodChannel.Result) {
             if (call.method == "humanGetHeaders") {
-                val json = JSONObject((HumanSecurity.headersForURLRequest(null) as Map<*, *>?)!!)
+                val json = JSONObject((HumanSecurity.headersForURLRequest(null) as Map<*, *>?))
                 result.success(json.toString())
             }
             else if (call.method == "humanHandleResponse") {
