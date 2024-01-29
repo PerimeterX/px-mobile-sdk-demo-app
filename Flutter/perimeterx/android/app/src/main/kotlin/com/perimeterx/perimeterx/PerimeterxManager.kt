@@ -5,6 +5,7 @@ import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.PerimeterXChallengeResult
 import com.perimeterx.mobile_sdk.main.PXPolicy
 import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType
+import com.perimeterx.mobile_sdk.main.PXStorageMethod
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import org.json.JSONObject
