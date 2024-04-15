@@ -279,7 +279,7 @@ dependencies {
     }
 
     // PerimeterX SDK
-    implementation("com.perimeterx.sdk:msdk:3.2.1")
+    implementation("com.perimeterx.sdk:msdk:3.3.0")
 }
 
 if (isNewArchitectureEnabled()) {
