@@ -1,0 +1,166 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.humansecurity.android_sdk_demo"
+4    android:versionCode="1"
+5    android:versionName="4.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- HUMAN -->
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:6:5-78
+12-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:7:5-67
+13-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:7:22-64
+14
+15    <permission
+15-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+16        android:name="com.humansecurity.android_sdk_demo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.humansecurity.android_sdk_demo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:9:5-26:19
+22        android:name="com.humansecurity.human_sdk_demo.MainApplication"
+22-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:10:9-72
+23        android:allowBackup="true"
+23-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:11:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+25        android:debuggable="true"
+26        android:extractNativeLibs="true"
+27        android:icon="@mipmap/ic_launcher"
+27-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:12:9-43
+28        android:label="@string/app_name"
+28-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:13:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:14:9-54
+30        android:supportsRtl="true"
+30-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:15:9-35
+31        android:testOnly="true"
+32        android:theme="@style/Theme.HUMAN_SDK_Demo" >
+32-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:16:9-52
+33        <activity
+33-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:17:9-25:20
+34            android:name="com.humansecurity.human_sdk_demo.LoginActivity"
+34-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:18:13-74
+35            android:exported="true" >
+35-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:19:13-36
+36            <intent-filter>
+36-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:20:13-24:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:21:17-69
+37-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:21:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:23:17-77
+39-->/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:23:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity
+42-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:11:9-13:40
+43            android:name="com.humansecurity.mobile_sdk.block.HSBlockActivity"
+43-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:12:13-78
+44            android:exported="false" />
+44-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:13:13-37
+45        <activity
+45-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:14:9-17:75
+46            android:name="com.humansecurity.mobile_sdk.doctor_app.ui.HSDoctorActivity"
+46-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:15:13-87
+47            android:exported="false"
+47-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:16:13-37
+48            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+48-->[HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:17:13-72
+49
+50        <provider
+50-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+51            android:name="androidx.startup.InitializationProvider"
+51-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+52            android:authorities="com.humansecurity.android_sdk_demo.androidx-startup"
+52-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+53            android:exported="false" >
+53-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+54            <meta-data
+54-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+55-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+56                android:value="androidx.startup" />
+56-->[androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+57            <meta-data
+57-->[androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+58-->[androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:30:17-78
+59                android:value="androidx.startup" />
+59-->[androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+61-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+62                android:value="androidx.startup" />
+62-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+63        </provider>
+64
+65        <activity
+65-->[com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+66            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+66-->[com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+67            android:exported="false"
+67-->[com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+69
+70        <meta-data
+70-->[com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+71            android:name="com.google.android.gms.version"
+71-->[com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+72            android:value="@integer/google_play_services_version" />
+72-->[com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+73
+74        <receiver
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+75            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+76            android:directBootAware="false"
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+77            android:enabled="true"
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+78            android:exported="true"
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+79            android:permission="android.permission.DUMP" >
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+80            <intent-filter>
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+81                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+82            </intent-filter>
+83            <intent-filter>
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+84                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+85            </intent-filter>
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+87                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+90                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+91            </intent-filter>
+92        </receiver>
+93    </application>
+94
+95</manifest>

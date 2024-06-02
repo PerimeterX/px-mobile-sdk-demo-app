@@ -1,0 +1,367 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:2:1-20:12
+MERGED from [com.google.android.material:material:1.12.0] /Users/orenyaar/.gradle/caches/transforms-4/1f2aa5648e9605fae2960699871f7d4a/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/orenyaar/.gradle/caches/transforms-4/3a6a3f6196dd0d663987bb8a3c50b8cf/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/86d6a0d6367ec57245c77b3a588edf09/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/108eafeec2aaa87ed188843a0218cc6f/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/0548d5254a49101a6e3652a91b027bc2/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3bb62e61b9a6e254d61cebbe774a1578/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-instantapps:18.1.0] /Users/orenyaar/.gradle/caches/transforms-4/49a2ade64db40d09e7e0dbdebaca75bb/transformed/jetified-play-services-instantapps-18.1.0/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/orenyaar/.gradle/caches/transforms-4/527ecbe7d30d875754f5e374b6ee013c/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/orenyaar/.gradle/caches/transforms-4/991f57f6e45dcde509c35336fc10eb81/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.0] /Users/orenyaar/.gradle/caches/transforms-4/7c56a942c7acaa40a1d7742700ff2d89/transformed/jetified-activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/4f8c736aff1f20ead6246bfb2d05cd4e/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/741eaf8068535e3c5c112800416bef17/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /Users/orenyaar/.gradle/caches/transforms-4/00182d205b2ccceaed5028398ee55df6/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/280e3aaf5fa0774d5a9c3d3ae98b2ce8/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/dc0fc2983c81a8d2c025149e8262c6b5/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/8fa91b16357ce2f9f25d24c0de628c16/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/86c126a8f1937d815e75377308eff0a0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/cce2c00c7fa5d47cc6170c8c47e7b051/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/116e7263ceb0abf4847375947846bade/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/981ae1c3dd91162879c3ef057f51b289/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/a2bcb06702a852d7e2fb204fa22acbc3/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/orenyaar/.gradle/caches/transforms-4/f96319626f9b8b56f5430d0b19fb4c19/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/231ebad40733fe5470ff567a1ce39886/transformed/jetified-lifecycle-livedata-core-ktx-2.8.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/74a750a2cce356828a805d4e293ef6a2/transformed/lifecycle-livedata-2.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/defc93caee3a25074c836d1b1fa4e318/transformed/lifecycle-livedata-core-2.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/665c340d4e057913441ae546312e4141/transformed/lifecycle-viewmodel-2.8.1/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/8e71c879667c16ff39f646cebe954538/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/dd6ab64a376034bb2460790dd6edb2e3/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/618af73c7d9a5bbe2c80fed24efbbebc/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/7627d3e5d649b20211aac6a0dad3546b/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/445703593821290cc71986c2528adef2/transformed/jetified-datastore-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/1590d7ca18e31da56bf868d802a6cf4c/transformed/jetified-datastore-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/a5a06cd56057b58344d4744612b26f4f/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/orenyaar/.gradle/caches/transforms-4/fccf0acddfa7974e4c5f2734feb43ea7/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2bde2d7be83e8048f46182261c89218c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/5523a11cc40c25e391b4fe2fce9a2ecf/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2ec012818bed066d7883855029ad0676/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/db331eef287bc458ab915ea5e7b775ec/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/d1bf05c5167ac20541f3e2e0fc840e63/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/orenyaar/.gradle/caches/transforms-4/ca0851c26c824836cd9e3a453603642a/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/577446a0df391860fd82628090537f95/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/330d70e317756e4f8395423599dd5322/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3683a317513e42c7c2d70b4da83b5fa7/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:3:5-49
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:6:5-78
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:7:5-79
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:8:5-67
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:7:22-64
+application
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:9:5-26:19
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:9:5-26:19
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:10:5-18:19
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:10:5-18:19
+MERGED from [com.google.android.material:material:1.12.0] /Users/orenyaar/.gradle/caches/transforms-4/1f2aa5648e9605fae2960699871f7d4a/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] /Users/orenyaar/.gradle/caches/transforms-4/1f2aa5648e9605fae2960699871f7d4a/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/orenyaar/.gradle/caches/transforms-4/3a6a3f6196dd0d663987bb8a3c50b8cf/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/orenyaar/.gradle/caches/transforms-4/3a6a3f6196dd0d663987bb8a3c50b8cf/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/orenyaar/.gradle/caches/transforms-4/527ecbe7d30d875754f5e374b6ee013c/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/orenyaar/.gradle/caches/transforms-4/527ecbe7d30d875754f5e374b6ee013c/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/db331eef287bc458ab915ea5e7b775ec/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/db331eef287bc458ab915ea5e7b775ec/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:16:9-52
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:10:9-72
+activity#com.humansecurity.human_sdk_demo.LoginActivity
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:17:9-25:20
+	android:exported
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:19:13-36
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:18:13-74
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml:23:27-74
+uses-sdk
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:5:5-44
+MERGED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/orenyaar/.gradle/caches/transforms-4/1f2aa5648e9605fae2960699871f7d4a/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/orenyaar/.gradle/caches/transforms-4/1f2aa5648e9605fae2960699871f7d4a/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/orenyaar/.gradle/caches/transforms-4/3a6a3f6196dd0d663987bb8a3c50b8cf/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/orenyaar/.gradle/caches/transforms-4/3a6a3f6196dd0d663987bb8a3c50b8cf/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/86d6a0d6367ec57245c77b3a588edf09/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/86d6a0d6367ec57245c77b3a588edf09/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/108eafeec2aaa87ed188843a0218cc6f/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/orenyaar/.gradle/caches/transforms-4/108eafeec2aaa87ed188843a0218cc6f/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/0548d5254a49101a6e3652a91b027bc2/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/0548d5254a49101a6e3652a91b027bc2/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3bb62e61b9a6e254d61cebbe774a1578/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3bb62e61b9a6e254d61cebbe774a1578/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-instantapps:18.1.0] /Users/orenyaar/.gradle/caches/transforms-4/49a2ade64db40d09e7e0dbdebaca75bb/transformed/jetified-play-services-instantapps-18.1.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-instantapps:18.1.0] /Users/orenyaar/.gradle/caches/transforms-4/49a2ade64db40d09e7e0dbdebaca75bb/transformed/jetified-play-services-instantapps-18.1.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/orenyaar/.gradle/caches/transforms-4/527ecbe7d30d875754f5e374b6ee013c/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/orenyaar/.gradle/caches/transforms-4/527ecbe7d30d875754f5e374b6ee013c/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/orenyaar/.gradle/caches/transforms-4/991f57f6e45dcde509c35336fc10eb81/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/orenyaar/.gradle/caches/transforms-4/991f57f6e45dcde509c35336fc10eb81/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.0] /Users/orenyaar/.gradle/caches/transforms-4/7c56a942c7acaa40a1d7742700ff2d89/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/orenyaar/.gradle/caches/transforms-4/7c56a942c7acaa40a1d7742700ff2d89/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/4f8c736aff1f20ead6246bfb2d05cd4e/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/4f8c736aff1f20ead6246bfb2d05cd4e/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/741eaf8068535e3c5c112800416bef17/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/741eaf8068535e3c5c112800416bef17/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /Users/orenyaar/.gradle/caches/transforms-4/00182d205b2ccceaed5028398ee55df6/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /Users/orenyaar/.gradle/caches/transforms-4/00182d205b2ccceaed5028398ee55df6/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/280e3aaf5fa0774d5a9c3d3ae98b2ce8/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/280e3aaf5fa0774d5a9c3d3ae98b2ce8/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/dc0fc2983c81a8d2c025149e8262c6b5/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/dc0fc2983c81a8d2c025149e8262c6b5/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/8fa91b16357ce2f9f25d24c0de628c16/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/8fa91b16357ce2f9f25d24c0de628c16/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/86c126a8f1937d815e75377308eff0a0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/86c126a8f1937d815e75377308eff0a0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/cce2c00c7fa5d47cc6170c8c47e7b051/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/cce2c00c7fa5d47cc6170c8c47e7b051/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/116e7263ceb0abf4847375947846bade/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/116e7263ceb0abf4847375947846bade/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/981ae1c3dd91162879c3ef057f51b289/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/981ae1c3dd91162879c3ef057f51b289/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/a2bcb06702a852d7e2fb204fa22acbc3/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/orenyaar/.gradle/caches/transforms-4/a2bcb06702a852d7e2fb204fa22acbc3/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/orenyaar/.gradle/caches/transforms-4/f96319626f9b8b56f5430d0b19fb4c19/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/orenyaar/.gradle/caches/transforms-4/f96319626f9b8b56f5430d0b19fb4c19/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/231ebad40733fe5470ff567a1ce39886/transformed/jetified-lifecycle-livedata-core-ktx-2.8.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/231ebad40733fe5470ff567a1ce39886/transformed/jetified-lifecycle-livedata-core-ktx-2.8.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/74a750a2cce356828a805d4e293ef6a2/transformed/lifecycle-livedata-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/74a750a2cce356828a805d4e293ef6a2/transformed/lifecycle-livedata-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/defc93caee3a25074c836d1b1fa4e318/transformed/lifecycle-livedata-core-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/defc93caee3a25074c836d1b1fa4e318/transformed/lifecycle-livedata-core-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/665c340d4e057913441ae546312e4141/transformed/lifecycle-viewmodel-2.8.1/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/665c340d4e057913441ae546312e4141/transformed/lifecycle-viewmodel-2.8.1/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/8e71c879667c16ff39f646cebe954538/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/8e71c879667c16ff39f646cebe954538/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/dd6ab64a376034bb2460790dd6edb2e3/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/dd6ab64a376034bb2460790dd6edb2e3/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/618af73c7d9a5bbe2c80fed24efbbebc/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/618af73c7d9a5bbe2c80fed24efbbebc/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/7627d3e5d649b20211aac6a0dad3546b/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/7627d3e5d649b20211aac6a0dad3546b/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/445703593821290cc71986c2528adef2/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/445703593821290cc71986c2528adef2/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/1590d7ca18e31da56bf868d802a6cf4c/transformed/jetified-datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/1590d7ca18e31da56bf868d802a6cf4c/transformed/jetified-datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/a5a06cd56057b58344d4744612b26f4f/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/a5a06cd56057b58344d4744612b26f4f/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/orenyaar/.gradle/caches/transforms-4/fccf0acddfa7974e4c5f2734feb43ea7/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/orenyaar/.gradle/caches/transforms-4/fccf0acddfa7974e4c5f2734feb43ea7/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2bde2d7be83e8048f46182261c89218c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2bde2d7be83e8048f46182261c89218c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/5523a11cc40c25e391b4fe2fce9a2ecf/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/5523a11cc40c25e391b4fe2fce9a2ecf/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2ec012818bed066d7883855029ad0676/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/2ec012818bed066d7883855029ad0676/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/db331eef287bc458ab915ea5e7b775ec/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/db331eef287bc458ab915ea5e7b775ec/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/d1bf05c5167ac20541f3e2e0fc840e63/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/d1bf05c5167ac20541f3e2e0fc840e63/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/orenyaar/.gradle/caches/transforms-4/ca0851c26c824836cd9e3a453603642a/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/orenyaar/.gradle/caches/transforms-4/ca0851c26c824836cd9e3a453603642a/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/577446a0df391860fd82628090537f95/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/577446a0df391860fd82628090537f95/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/330d70e317756e4f8395423599dd5322/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/330d70e317756e4f8395423599dd5322/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3683a317513e42c7c2d70b4da83b5fa7/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/orenyaar/.gradle/caches/transforms-4/3683a317513e42c7c2d70b4da83b5fa7/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/Android/HUMAN_SDK_Demo/app/src/main/AndroidManifest.xml
+activity#com.humansecurity.mobile_sdk.block.HSBlockActivity
+ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:11:9-13:40
+	android:exported
+		ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:12:13-78
+activity#com.humansecurity.mobile_sdk.doctor_app.ui.HSDoctorActivity
+ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:14:9-17:75
+	android:exported
+		ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:17:13-72
+	android:name
+		ADDED from [HUMAN-release.aar] /Users/orenyaar/.gradle/caches/transforms-4/3d6bab0ef1777c4eef0322a166c7e59a/transformed/jetified-HUMAN-release/AndroidManifest.xml:15:13-87
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/orenyaar/.gradle/caches/transforms-4/f98e1e4480f375d49f0bbc3d58793adb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/orenyaar/.gradle/caches/transforms-4/7594e68fe199f2dcac72209b0a2348ad/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/orenyaar/.gradle/caches/transforms-4/7babf8f3e91cfff59a06d60fd73e12fc/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/orenyaar/.gradle/caches/transforms-4/f47ae26f62fef9b36a2d3322885add69/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.humansecurity.android_sdk_demo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.humansecurity.android_sdk_demo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/orenyaar/.gradle/caches/transforms-4/e62479cc111278a56d0bd9b73804fe6f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.1] /Users/orenyaar/.gradle/caches/transforms-4/56eaaf5363b5a10f84cc63839a8600dd/transformed/jetified-lifecycle-process-2.8.1/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/orenyaar/.gradle/caches/transforms-4/562f40b908c7f9532236faff26d41a3a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
