@@ -26,16 +26,18 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    namespace 'com.perimeterx.perimeterx'
+
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     sourceSets {
@@ -68,5 +70,15 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.perimeterx.sdk:msdk:3.3.0'
+//    implementation 'com.humansecu rity.sdk:msdk:4.0.0'
+    implementation files('libs/HUMAN-release.aar')
+    implementation 'androidx.core:core-ktx:1.13.1' // any version (select 1.10.1 if your app has 'targetSdkVersion 33')
+    implementation 'androidx.appcompat:appcompat:1.7.0' // min v1.0.0
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // min v2.0.0
+    implementation 'androidx.lifecycle:lifecycle-process:2.8.1' // min v2.6.0 (select 2.6.2 if your app has 'targetSdkVersion 33')
+    implementation 'androidx.datastore:datastore-preferences:1.1.1' // exact v1.0.0
+    implementation 'com.google.android.material:material:1.12.0' // min v1.6.0 (select 1.9.0 if your app has 'targetSdkVersion 33')
+    implementation 'com.google.android.gms:play-services-instantapps:18.1.0' // min v11.0.0
+    implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
+    implementation 'io.ktor:ktor-client-okhttp:2.3.11' // min v2.2.1
 }
