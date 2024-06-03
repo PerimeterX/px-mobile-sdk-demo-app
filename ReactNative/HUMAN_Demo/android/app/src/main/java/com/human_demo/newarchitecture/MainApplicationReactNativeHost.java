@@ -1,4 +1,4 @@
-package com.perimeterx_sdk_demo.newarchitecture;
+package com.human_demo.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.perimeterx_sdk_demo.BuildConfig;
-import com.perimeterx_sdk_demo.newarchitecture.components.MainComponentsRegistry;
-import com.perimeterx_sdk_demo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.human_demo.BuildConfig;
+import com.human_demo.newarchitecture.components.MainComponentsRegistry;
+import com.human_demo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

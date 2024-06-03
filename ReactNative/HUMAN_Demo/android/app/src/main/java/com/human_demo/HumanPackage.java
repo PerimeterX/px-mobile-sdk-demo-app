@@ -1,4 +1,4 @@
-package com.perimeterx_sdk_demo;
+package com.human_demo;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PerimeterXPackage implements ReactPackage {
+public class HumanPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
@@ -21,8 +21,8 @@ public class PerimeterXPackage implements ReactPackage {
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        PerimeterXModule module = new PerimeterXModule(reactContext);
-        PerimeterXModule.shared = module;
+        HumanModule module = new HumanModule(reactContext);
+        HumanModule.shared = module;
         modules.add(module);
 
         return modules;

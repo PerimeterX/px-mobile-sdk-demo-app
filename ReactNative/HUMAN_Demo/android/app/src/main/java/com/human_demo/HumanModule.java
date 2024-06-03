@@ -1,4 +1,4 @@
-package com.perimeterx_sdk_demo;
+package com.human_demo;
 
 import androidx.annotation.NonNull;
 
@@ -7,33 +7,33 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.perimeterx.mobile_sdk.PerimeterX;
-import com.perimeterx.mobile_sdk.PerimeterXChallengeResult;
+import com.humansecurity.mobile_sdk.HumanChallengeResult;
+import com.humansecurity.mobile_sdk.HumanSecurity;
 
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class PerimeterXModule extends ReactContextBaseJavaModule {
+public class HumanModule extends ReactContextBaseJavaModule {
 
-    static PerimeterXModule shared = null;
+    static HumanModule shared = null;
 
-    String pxNewHeaders = "PxNewHeaders";
-    String pxChallengeResult = "PxChallengeResult";
-    String pxSolved = "solved";
-    String pxCancelled = "cancelled";
-    String pxFalse = "false";
+    String humanNewHeaders = "HumanNewHeaders";
+    String humanChallengeResult = "HumanChallengeResult";
+    String humanSolved = "solved";
+    String humanCancelled = "cancelled";
+    String humanFalse = "false";
 
     // PX Module
 
-    PerimeterXModule(ReactApplicationContext context) {
+    HumanModule(ReactApplicationContext context) {
         super(context);
     }
 
     @NonNull
     @Override
     public String getName() {
-        return "PerimeterXModule";
+        return "HumanModule";
     }
 
     public void handleUpdatedHeaders(HashMap<String, String> headers) {
@@ -43,7 +43,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
         JSONObject json = new JSONObject(headers);
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(pxNewHeaders, json.toString());
+                .emit(humanNewHeaders, json.toString());
     }
 
     public void handleChallengeSolvedEvent() {
@@ -52,7 +52,7 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
         }
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(pxChallengeResult, pxSolved);
+                .emit(humanChallengeResult, humanSolved);
     }
 
     public void handleChallengeCancelledEvent() {
@@ -61,23 +61,23 @@ public class PerimeterXModule extends ReactContextBaseJavaModule {
         }
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(pxChallengeResult, pxCancelled);
+                .emit(humanChallengeResult, humanCancelled);
     }
 
     @ReactMethod
     public void getHTTPHeaders(Promise promise) {
-        JSONObject json = new JSONObject(PerimeterX.INSTANCE.headersForURLRequest(null));
+        JSONObject json = new JSONObject(HumanSecurity.INSTANCE.headersForURLRequest(null));
         promise.resolve(json.toString());
     }
 
     @ReactMethod
     public void handleResponse(String response, Integer code, String url, Promise promise) {
-        boolean handled = PerimeterX.INSTANCE.handleResponse(response, null, result -> {
-            promise.resolve(result == PerimeterXChallengeResult.SOLVED ? pxSolved : pxCancelled);
+        boolean handled = HumanSecurity.INSTANCE.handleResponse(response, null, result -> {
+            promise.resolve(result == HumanChallengeResult.SOLVED ? humanSolved : humanCancelled);
             return null;
         });
         if (!handled) {
-            promise.resolve(pxFalse);
+            promise.resolve(humanFalse);
         }
     }
 }

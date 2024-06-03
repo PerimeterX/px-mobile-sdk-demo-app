@@ -1,4 +1,4 @@
-package com.perimeterx_sdk_demo;
+package com.human_demo;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "PerimeterX_SDK_Demo";
+    return "HUMAN_Demo";
   }
 
   /**

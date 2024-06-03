@@ -1,4 +1,4 @@
-package com.perimeterx_sdk_demo.newarchitecture.components;
+package com.human_demo.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
