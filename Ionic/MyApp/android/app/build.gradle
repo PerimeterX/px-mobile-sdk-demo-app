@@ -35,12 +35,23 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
-    implementation("com.perimeterx.sdk:msdk:3.3.0")
     implementation project(':capacitor-android')
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+
+//    implementation 'com.humansecurity.sdk:msdk:4.0.0'
+    implementation files('libs/HUMAN-release.aar')
+    implementation 'androidx.core:core-ktx:1.13.1' // any version (select 1.10.1 if your app has 'targetSdkVersion 33')
+    implementation 'androidx.appcompat:appcompat:1.7.0' // min v1.0.0
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // min v2.0.0
+    implementation 'androidx.lifecycle:lifecycle-process:2.8.1' // min v2.6.0 (select 2.6.2 if your app has 'targetSdkVersion 33')
+    implementation 'androidx.datastore:datastore-preferences:1.1.1' // exact v1.0.0
+    implementation 'com.google.android.material:material:1.12.0' // min v1.6.0 (select 1.9.0 if your app has 'targetSdkVersion 33')
+    implementation 'com.google.android.gms:play-services-instantapps:18.1.0' // min v11.0.0
+    implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
+    implementation 'io.ktor:ktor-client-okhttp:2.3.11' // min v2.2.1
 }
 
 apply from: 'capacitor.build.gradle'

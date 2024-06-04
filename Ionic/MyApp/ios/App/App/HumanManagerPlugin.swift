@@ -1,5 +1,5 @@
 //
-//  PerimeterxManager.swift
+//  HumanManagerPlugin.swift
 //  App
 //
 //  Created by Oren Yaar on 02/08/2023.
@@ -7,19 +7,19 @@
 
 import Foundation
 import Capacitor
-import PerimeterX_SDK
+import HUMAN
 
-@objc(PerimeterxManagerPlugin)
-class PerimeterxManagerPlugin: CAPPlugin {
+@objc(HumanManagerPlugin)
+class HumanManagerPlugin: CAPPlugin {
     
-    static let shared = PerimeterxManagerPlugin()
+    static let shared = HumanManagerPlugin()
     
     func start() {
         do {
-            let policy = PXPolicy()
-            policy.urlRequestInterceptionType = .none
-            policy.doctorCheckEnabled = true
-            try PerimeterX.start(appId: "PXj9y4Q8Em", delegate: nil, policy: policy)
+            let policy = HSPolicy()
+            policy.automaticInterceptorPolicy.interceptorType = .none
+            policy.doctorAppPolicy.enabled = true
+            try HumanSecurity.start(appId: "PXj9y4Q8Em", delegate: nil, policy: policy)
         }
         catch {
             print("error: \(error)")
@@ -27,14 +27,14 @@ class PerimeterxManagerPlugin: CAPPlugin {
     }
     
     @objc func getHttpHeaders(_ call: CAPPluginCall) {
-        call.resolve(PerimeterX.headersForURLRequest()!)
+        call.resolve(HumanSecurity.headersForURLRequest())
     }
     
     @objc func handleResponse(_ call: CAPPluginCall) {
         let response = call.getString("value") ?? ""
         let data = response.data(using: .utf8)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil)
-        let handled = PerimeterX.handleResponse(response: httpURLResponse!, data: data!) { challengeResult in
+        let handled = HumanSecurity.handleResponse(response: httpURLResponse!, data: data!) { challengeResult in
             call.resolve(["value": challengeResult == .solved ? "solved" : "cancelled"])
         }
         if !handled {

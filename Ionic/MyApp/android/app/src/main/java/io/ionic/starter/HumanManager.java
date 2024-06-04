@@ -5,20 +5,20 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.perimeterx.mobile_sdk.PerimeterX;
-import com.perimeterx.mobile_sdk.PerimeterXChallengeResult;
+import com.humansecurity.mobile_sdk.HumanChallengeResult;
+import com.humansecurity.mobile_sdk.HumanSecurity;
 import java.util.HashMap;
 
-@CapacitorPlugin(name = "PerimeterX")
-public class PerimeterxManager extends Plugin {
+@CapacitorPlugin(name = "HUMAN")
+public class HumanManager extends Plugin {
 
-    String pxSolved = "solved";
-    String pxCancelled = "cancelled";
-    String pxFalse = "false";
+    String humanSolved = "solved";
+    String humanCancelled = "cancelled";
+    String humanFalse = "false";
 
     @PluginMethod()
     public void getHttpHeaders(PluginCall call) {
-        HashMap headers = PerimeterX.INSTANCE.headersForURLRequest(null);
+        HashMap headers = HumanSecurity.INSTANCE.headersForURLRequest(null);
         JSObject ret = new JSObject();
         for (Object key : headers.keySet()) {
             ret.put((String)key, headers.get(key));
@@ -30,13 +30,13 @@ public class PerimeterxManager extends Plugin {
     public void handleResponse(PluginCall call) {
         String response = call.getString("value");
         JSObject ret = new JSObject();
-        boolean handled = PerimeterX.INSTANCE.handleResponse(response, null, result -> {
-            ret.put("value", result == PerimeterXChallengeResult.SOLVED ? pxSolved : pxCancelled);
+        boolean handled = HumanSecurity.INSTANCE.handleResponse(response, null, result -> {
+            ret.put("value", result == HumanChallengeResult.SOLVED ? humanSolved : humanCancelled);
             call.resolve(ret);
             return null;
         });
         if (!handled) {
-            ret.put("value", pxFalse);
+            ret.put("value", humanFalse);
             call.resolve(ret);
         }
     }
