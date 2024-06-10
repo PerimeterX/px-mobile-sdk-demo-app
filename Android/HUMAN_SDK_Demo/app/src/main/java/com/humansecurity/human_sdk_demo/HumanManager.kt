@@ -1,37 +1,37 @@
 package com.humansecurity.human_sdk_demo
 
 import android.app.Application
-import com.humansecurity.mobile_sdk.HumanDelegate
 import com.humansecurity.mobile_sdk.HumanSecurity
+import com.humansecurity.mobile_sdk.main.HSBotDefenderDelegate
 import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod
 
-object HumanManager: HumanDelegate {
+object HumanManager: HSBotDefenderDelegate {
 
     // HumanDelegate
 
-    override fun humanRequestBlockedHandler(url: String?, appId: String) {
+    override fun botDefenderRequestBlocked(url: String?, appId: String) {
         println("Request Blocked")
     }
 
-    override fun humanChallengeSolvedHandler(appId: String) {
+    override fun botDefenderChallengeSolved(appId: String) {
         println("Challenge Solved")
     }
 
-    override fun humanChallengeCancelledHandler(appId: String) {
+    override fun botDefenderChallengeCancelled(appId: String) {
         println("Challenge Cancelled")
     }
 
-    override fun humanChallengeRenderFailedHandler(appId: String) {
-        println("Challenge Render Failed")
-    }
-
-    override fun humanChallengeRenderedHandler(appId: String) {
+    override fun botDefenderChallengeRendered(appId: String) {
         println("Challenge Rendered")
     }
 
-    override fun humanHeadersWereUpdated(headers: HashMap<String, String>, appId: String) {
+    override fun botDefenderChallengeRenderFailed(appId: String) {
+        println("Challenge Render Failed")
+    }
+
+    override fun botDefenderDidUpdateHeaders(headers: HashMap<String, String>, appId: String) {
         println("Headers Were Updated")
     }
 
@@ -56,13 +56,13 @@ object HumanManager: HumanDelegate {
         policy.doctorAppPolicy.enabled = true
 
         // Start HUMAN SDK with your AppID //
-        HumanSecurity.start(application, appId, this, policy)
+        HumanSecurity.start(application, appId, policy)
     }
 
     private fun setCustomParameters() {
         val customParameters = HashMap<String, String>()
         customParameters["custom_param1"] = "hello"
         customParameters["custom_param2"] = "world"
-        HumanSecurity.setCustomParameters(customParameters, null)
+        HumanSecurity.BD.setCustomParameters(customParameters, null)
     }
 }

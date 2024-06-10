@@ -1,6 +1,7 @@
 package com.humansecurity.human_sdk_demo
 
 import com.humansecurity.mobile_sdk.HumanSecurity
+import com.humansecurity.mobile_sdk.main.HSBotDefenderErrorType
 import com.humansecurity.mobile_sdk.main.HSInterceptor
 import com.humansecurity.mobile_sdk.main.HSTimeoutInterceptor
 import okhttp3.OkHttpClient
@@ -22,14 +23,19 @@ object OkHttpClientExample {
             okHttpClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) {
                     response.body?.string()?.let { responseBody ->
-                        if (HumanSecurity.isRequestBlockedError(responseBody)) {
-                            println("request was blocked by HUMAN")
-                        }
-                        if (HumanSecurity.isChallengeSolvedError(responseBody)) {
-                            println("request was blocked by HUMAN and user solved the challenge")
-                        }
-                        if (HumanSecurity.isChallengeCancelledError(responseBody)) {
-                            println("request was blocked by HUMAN and challenge was cancelled")
+                        when (HumanSecurity.BD.errorType(responseBody)) {
+                            HSBotDefenderErrorType.REQUEST_WAS_BLOCKED -> {
+                                println("request was blocked by HUMAN")
+                            }
+                            HSBotDefenderErrorType.CHALLENGE_WAS_SOLVED -> {
+                                println("request was blocked by HUMAN and user solved the challenge")
+                            }
+                            HSBotDefenderErrorType.CHALLENGE_WAS_CANCELLED -> {
+                                println("request was blocked by HUMAN and challenge was cancelled")
+                            }
+                            else -> {
+                                println("unknown error")
+                            }
                         }
                     }
                 }

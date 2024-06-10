@@ -87,7 +87,7 @@ class APIDataManager {
         
         // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to `HSAutomaticInterceptorType/none` => get HTTP headers from HUMAN and add them to your request //
         if HumanManager.shared.urlRequestInterceptionType == .none {
-            let headers = HumanSecurity.headersForURLRequest()
+            let headers = HumanSecurity.BD.headersForURLRequest()
             request.allHTTPHeaderFields = headers
         }
         
@@ -98,14 +98,15 @@ class APIDataManager {
         if let error = error {
             // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to any value rather than `HSAutomaticInterceptorType/none`  => check that the error is "Request blocked by HUMAN" //
             if HumanManager.shared.urlRequestInterceptionType != .none {
-                if HumanSecurity.isRequestBlockedError(error: error) {
+                switch (HumanSecurity.BD.errorType(error: error)) {
+                case.requestWasBlocked:
                     print("request was blocked by HUMAN")
-                }
-                if HumanSecurity.isChallengeSolvedError(error: error) {
+                case .challengeWasSolved:
                     print("request was blocked by HUMAN and user solved the challenge")
-                }
-                if HumanSecurity.isChallengeCancelledError(error: error) {
+                case .challengeWasCancelled:
                     print("request was blocked by HUMAN and challenge was cancelled")
+                default:
+                    break
                 }
             }
         }
@@ -113,7 +114,7 @@ class APIDataManager {
         if let data = data, let response = response as? HTTPURLResponse {
             // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to `HSAutomaticInterceptorType/none` => pass the data and response to HUMAN to handle it //
             if HumanManager.shared.urlRequestInterceptionType == .none {
-                let isHandledByPX = HumanSecurity.handleResponse(response: response, data: data) { result in
+                let isHandledByPX = HumanSecurity.BD.handleResponse(response: response, data: data) { result in
                     print("challenge result = \(result)")
                 }
                 if isHandledByPX {

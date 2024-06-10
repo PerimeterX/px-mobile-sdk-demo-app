@@ -8,32 +8,32 @@
 import Foundation
 import HUMAN
 
-class HumanManager: NSObject, HumanDelegate {
+class HumanManager: NSObject, HSBotDefenderDelegate {
     
-    // MARK: - HumanDelegate
+    // MARK: - HSBotDefenderDelegate
     
-    func humanDidRequestBlocked(url: URL?, appId: String) {
+    func botDefenderRequestBlocked(url: URL?, appId: String) {
         print("Request Blocked")
     }
     
-    func humanDidChallengeSolved(forAppId appId: String) {
+    func botDefenderChallengeSolved(forAppId appId: String) {
         print("Challenge Solved")
     }
     
-    func humanDidChallengeCancelled(forAppId appId: String) {
+    func botDefenderChallengeCancelled(forAppId appId: String) {
         print("Challenge Cancelled")
     }
     
-    func humanHeadersWereUpdated(headers: [String : String], forAppId appId: String) {
-        print("Headers Were Updated")
-    }
-    
-    func humanDidRenderChallenge(forAppId appId: String) {
+    func botDefenderChallengeRendered(forAppId appId: String) {
         print("Challenge Rendered")
     }
     
-    func humanDidFailRenderChallenge(forAppId appId: String) {
+    func botDefenderChallengeRenderFailed(forAppId appId: String) {
         print("Challenge Render Failed")
+    }
+    
+    func botDefenderDidUpdateHeaders(headers: [String : String], forAppId appId: String) {
+        print("Headers Were Updated")
     }
     
     // MARK: - singleton
@@ -64,7 +64,7 @@ class HumanManager: NSObject, HumanDelegate {
         
         // Start HUMAN SDK with your AppID //
         do {
-            try HumanSecurity.start(appId: appId, delegate: self, policy: policy)
+            try HumanSecurity.start(appId: appId, policy: policy)
         }
         catch {
             print("error: \(error)")
@@ -76,7 +76,7 @@ class HumanManager: NSObject, HumanDelegate {
         customParameters["custom_param1"] = "hello"
         customParameters["custom_param2"] = "world"
         do {
-            try HumanSecurity.setCustomParameters(parameters: customParameters)
+            try HumanSecurity.BD.setCustomParameters(parameters: customParameters)
         }
         catch {
             print("error: \(error)")

@@ -1,6 +1,7 @@
 package com.humansecurity.human_sdk_demo
 
 import com.humansecurity.mobile_sdk.HumanSecurity
+import com.humansecurity.mobile_sdk.main.HSBotDefenderErrorType
 import com.humansecurity.mobile_sdk.main.HSInterceptor
 import io.ktor.client.*
 import io.ktor.client.call.body
@@ -28,14 +29,19 @@ object KtorClientExample {
             val response: HttpResponse = ktorHttpClient.request(APIDataManager.loginUrl) {}
             println("request was finished")
             val responseBody = response.body<String>()
-            if (responseBody.contains(HumanSecurity.blockedErrorBody())) {
-                println("request was blocked by HUMAN")
-            }
-            if (responseBody.contains(HumanSecurity.challengeSolvedErrorBody())) {
-                println("request was blocked by HUMAN and user solved the challenge")
-            }
-            if (responseBody.contains(HumanSecurity.challengeCancelledErrorBody())) {
-                println("request was blocked by HUMAN and challenge was cancelled")
+            when (HumanSecurity.BD.errorType(responseBody)) {
+                HSBotDefenderErrorType.REQUEST_WAS_BLOCKED -> {
+                    println("request was blocked by HUMAN")
+                }
+                HSBotDefenderErrorType.CHALLENGE_WAS_SOLVED -> {
+                    println("request was blocked by HUMAN and user solved the challenge")
+                }
+                HSBotDefenderErrorType.CHALLENGE_WAS_CANCELLED -> {
+                    println("request was blocked by HUMAN and challenge was cancelled")
+                }
+                else -> {
+                    println("unknown error")
+                }
             }
         } catch (exception: Exception) {
             println("request was failed. exception: $exception")
