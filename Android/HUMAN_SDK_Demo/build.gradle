@@ -6,7 +6,7 @@ buildscript {
         maven { url 'https://jfrog.humansecurity.com/artifactory/px-Android-SDK/' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:8.4.1"
+        classpath 'com.android.tools.build:gradle:8.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21"
 
         // NOTE: Do not place your application dependencies here; they belong
