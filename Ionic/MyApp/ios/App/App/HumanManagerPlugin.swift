@@ -19,7 +19,7 @@ class HumanManagerPlugin: CAPPlugin {
             let policy = HSPolicy()
             policy.automaticInterceptorPolicy.interceptorType = .none
             policy.doctorAppPolicy.enabled = true
-            try HumanSecurity.start(appId: "PXj9y4Q8Em", delegate: nil, policy: policy)
+            try HumanSecurity.start(appId: "PXj9y4Q8Em", policy: policy)
         }
         catch {
             print("error: \(error)")
@@ -27,14 +27,14 @@ class HumanManagerPlugin: CAPPlugin {
     }
     
     @objc func getHttpHeaders(_ call: CAPPluginCall) {
-        call.resolve(HumanSecurity.headersForURLRequest())
+        call.resolve(HumanSecurity.BD.headersForURLRequest())
     }
     
     @objc func handleResponse(_ call: CAPPluginCall) {
         let response = call.getString("value") ?? ""
         let data = response.data(using: .utf8)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil)
-        let handled = HumanSecurity.handleResponse(response: httpURLResponse!, data: data!) { challengeResult in
+        let handled = HumanSecurity.BD.handleResponse(response: httpURLResponse!, data: data!) { challengeResult in
             call.resolve(["value": challengeResult == .solved ? "solved" : "cancelled"])
         }
         if !handled {

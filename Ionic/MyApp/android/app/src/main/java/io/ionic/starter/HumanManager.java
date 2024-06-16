@@ -5,8 +5,9 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.humansecurity.mobile_sdk.HumanChallengeResult;
 import com.humansecurity.mobile_sdk.HumanSecurity;
+import com.humansecurity.mobile_sdk.main.HSBotDefenderChallengeResult;
+
 import java.util.HashMap;
 
 @CapacitorPlugin(name = "HUMAN")
@@ -18,7 +19,7 @@ public class HumanManager extends Plugin {
 
     @PluginMethod()
     public void getHttpHeaders(PluginCall call) {
-        HashMap headers = HumanSecurity.INSTANCE.headersForURLRequest(null);
+        HashMap headers = HumanSecurity.INSTANCE.getBD().headersForURLRequest(null);
         JSObject ret = new JSObject();
         for (Object key : headers.keySet()) {
             ret.put((String)key, headers.get(key));
@@ -30,8 +31,8 @@ public class HumanManager extends Plugin {
     public void handleResponse(PluginCall call) {
         String response = call.getString("value");
         JSObject ret = new JSObject();
-        boolean handled = HumanSecurity.INSTANCE.handleResponse(response, null, result -> {
-            ret.put("value", result == HumanChallengeResult.SOLVED ? humanSolved : humanCancelled);
+        boolean handled = HumanSecurity.INSTANCE.getBD().handleResponse(response, null, result -> {
+            ret.put("value", result == HSBotDefenderChallengeResult.SOLVED ? humanSolved : humanCancelled);
             call.resolve(ret);
             return null;
         });
