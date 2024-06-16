@@ -11,7 +11,7 @@ class HumanManager {
             let policy = HSPolicy()
             policy.automaticInterceptorPolicy.interceptorType = .none
             policy.doctorAppPolicy.enabled = true
-            try HumanSecurity.start(appId: "PXj9y4Q8Em", delegate: nil, policy: policy)
+            try HumanSecurity.start(appId: "PXj9y4Q8Em", policy: policy)
         }
         catch {
             print("error: \(error)")
@@ -24,7 +24,7 @@ class HumanManager {
             if call.method == "_getHumanHeaders" {
                 var json: String?
                 do {
-                    let headers = HumanSecurity.headersForURLRequest()
+                    let headers = HumanSecurity.BD.headersForURLRequest()
                     let data = try JSONSerialization.data(withJSONObject: headers)
                     json = String(data: data, encoding: .utf8)
                 }
@@ -35,7 +35,7 @@ class HumanManager {
             }
             else if call.method == "_handleHumanResponse" {
                 if let response = call.arguments as? String, let data = response.data(using: .utf8), let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil) {
-                    let handled = HumanSecurity.handleResponse(response: httpURLResponse, data: data) { challengeResult in
+                    let handled = HumanSecurity.BD.handleResponse(response: httpURLResponse, data: data) { challengeResult in
                         result(challengeResult == .solved ? "solved" : "cancelled")
                     }
                     if handled {

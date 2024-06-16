@@ -1,8 +1,8 @@
 package com.perimeterx.perimeterx
 
 import android.app.Application
-import com.humansecurity.mobile_sdk.HumanChallengeResult
 import com.humansecurity.mobile_sdk.HumanSecurity
+import com.humansecurity.mobile_sdk.main.HSBotDefenderChallengeResult
 import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod
@@ -20,7 +20,7 @@ class HumanManager {
                 policy.storageMethod = HSStorageMethod.DATA_STORE
                 policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorType.NONE
                 policy.doctorAppPolicy.enabled = true
-                HumanSecurity.start(application, "PXj9y4Q8Em", null, policy)
+                HumanSecurity.start(application, "PXj9y4Q8Em", policy)
             }
             catch (exception: Exception) {
                 println("failed to start. exception: $exception")
@@ -29,12 +29,12 @@ class HumanManager {
 
         fun handleEvent(call: MethodCall, result: MethodChannel.Result) {
             if (call.method == "_getHumanHeaders") {
-                val json = JSONObject(HumanSecurity.headersForURLRequest(null) as Map<*, *>?)
+                val json = JSONObject(HumanSecurity.BD.headersForURLRequest(null) as Map<*, *>?)
                 result.success(json.toString())
             }
             else if (call.method == "_handleHumanResponse") {
-                val handled = HumanSecurity.handleResponse(call.arguments!! as String, null) { challengeResult: HumanChallengeResult ->
-                    result.success(if (challengeResult == HumanChallengeResult.SOLVED) "solved" else "cancelled")
+                val handled = HumanSecurity.BD.handleResponse(call.arguments!! as String, null) { challengeResult: HSBotDefenderChallengeResult ->
+                    result.success(if (challengeResult == HSBotDefenderChallengeResult.SOLVED) "solved" else "cancelled")
                     null
                 }
                 if (!handled) {
