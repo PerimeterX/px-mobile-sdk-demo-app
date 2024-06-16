@@ -57,7 +57,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorTypeNone;
   policy.doctorAppPolicy.enabled = YES;
   NSError *error = nil;
-  [HumanSecurity startWithAppId:@"PXj9y4Q8Em" delegate:self policy:policy error:&error];
+  [HumanSecurity startWithAppId:@"PXj9y4Q8Em" policy:policy error:&error];
+  HumanSecurity.BD.delegate = self;
   if (error != nil) {
     NSLog(@"failed to start. error: %@", error.localizedDescription);
   }
@@ -142,29 +143,29 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 #endif
 
-// MARK: - HumanDelegate
+// MARK: - HSBotDefenderDelegate
 
-- (void)humanDidRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
+- (void)botDefenderRequestBlockedWithUrl:(NSURL *)url appId:(NSString *)appId {
   
 }
 
-- (void)humanDidChallengeSolvedForAppId:(NSString *)appId {
+- (void)botDefenderChallengeSolvedForAppId:(NSString *)appId {
   [[HumanModule shared] handleChallengeSolvedEvent];
 }
 
-- (void)humanDidChallengeCancelledForAppId:(NSString *)appId {
+- (void)botDefenderChallengeCancelledForAppId:(NSString *)appId {
   [[HumanModule shared] handleChallengeCancelledEvent];
 }
 
-- (void)humanHeadersWereUpdatedWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
+- (void)botDefenderDidUpdateHeadersWithHeaders:(NSDictionary<NSString *,NSString *> *)headers forAppId:(NSString *)appId {
   [[HumanModule shared] handleUpdatedHeaders:headers];
 }
 
-- (void)humanDidRenderChallengeForAppId:(NSString *)appId{
+- (void)botDefenderChallengeRenderedForAppId:(NSString *)appId{
   
 }
 
-- (void)humanDidFailRenderChallengeForAppId:(NSString *)appId {
+- (void)botDefenderChallengeRenderFailedForAppId:(NSString *)appId {
   
 }
 

@@ -54,7 +54,7 @@ RCT_EXPORT_MODULE(HumanModule);
 RCT_REMAP_METHOD(getHTTPHeaders,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject) {
-  NSDictionary<NSString *, NSString *> *headers = [HumanSecurity headersForURLRequestForAppId:nil];
+  NSDictionary<NSString *, NSString *> *headers = [HumanSecurity.BD headersForURLRequestForAppId:nil];
   NSData *data = [NSJSONSerialization dataWithJSONObject:headers options:0 error:nil];
   NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   resolve(@[json]);
@@ -68,8 +68,8 @@ RCT_REMAP_METHOD(handleResponse,
                  rejecter:(RCTPromiseRejectBlock)reject) {
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   NSHTTPURLResponse *httpURLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:url] statusCode:code HTTPVersion:nil headerFields:nil];
-  BOOL handled = [HumanSecurity handleResponseWithResponse:httpURLResponse data:data forAppId:nil callback:^(enum HumanChallengeResult result) {
-    resolve((result == HumanChallengeResultSolved ? humanSolved : humanCancelled));
+  BOOL handled = [HumanSecurity.BD handleResponseWithResponse:httpURLResponse data:data forAppId:nil callback:^(enum HSBotDefenderChallengeResult result) {
+    resolve((result == HSBotDefenderChallengeResultSolved ? humanSolved : humanCancelled));
   }];
   if (!handled) {
     resolve(humanFalse);

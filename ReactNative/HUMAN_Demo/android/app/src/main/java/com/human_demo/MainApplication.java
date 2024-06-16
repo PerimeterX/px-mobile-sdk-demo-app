@@ -13,8 +13,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
-import com.humansecurity.mobile_sdk.HumanDelegate;
 import com.humansecurity.mobile_sdk.HumanSecurity;
+import com.humansecurity.mobile_sdk.main.HSBotDefenderDelegate;
 import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType;
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy;
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod;
@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication, HumanDelegate {
+public class MainApplication extends Application implements ReactApplication, HSBotDefenderDelegate {
 
     private final ReactNativeHost mReactNativeHost =
             new ReactNativeHost(this) {
@@ -73,7 +73,8 @@ public class MainApplication extends Application implements ReactApplication, Hu
         policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
         policy.getDoctorAppPolicy().setEnabled(true);
         try {
-            HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
+            HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", policy);
+            HumanSecurity.INSTANCE.getBD().setDelegate(this);
         }
         catch (Exception exception) {
             exception.printStackTrace();
@@ -111,37 +112,37 @@ public class MainApplication extends Application implements ReactApplication, Hu
         }
     }
 
-    // HUMANDelegate
+    // HSBotDefenderDelegate
 
     @Override
-    public void humanChallengeCancelledHandler(@NonNull String s) {
-        HumanModule.shared.handleChallengeCancelledEvent();
-    }
-
-    @Override
-    public void humanChallengeSolvedHandler(@NonNull String s) {
-        HumanModule.shared.handleChallengeSolvedEvent();
-    }
-
-    @Override
-    public void humanHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
+    public void botDefenderDidUpdateHeaders(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
         if (HumanModule.shared != null) {
             HumanModule.shared.handleUpdatedHeaders(hashMap);
         }
     }
 
     @Override
-    public void humanRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
+    public void botDefenderRequestBlocked(@Nullable String s, @NonNull String s1) {
 
     }
 
     @Override
-    public void humanChallengeRenderedHandler(@NonNull String s) {
+    public void botDefenderChallengeSolved(@NonNull String s) {
+        HumanModule.shared.handleChallengeSolvedEvent();
+    }
+
+    @Override
+    public void botDefenderChallengeCancelled(@NonNull String s) {
+        HumanModule.shared.handleChallengeCancelledEvent();
+    }
+
+    @Override
+    public void botDefenderChallengeRendered(@NonNull String s) {
 
     }
 
     @Override
-    public void humanChallengeRenderFailedHandler(@NonNull String s) {
+    public void botDefenderChallengeRenderFailed(@NonNull String s) {
 
     }
 }

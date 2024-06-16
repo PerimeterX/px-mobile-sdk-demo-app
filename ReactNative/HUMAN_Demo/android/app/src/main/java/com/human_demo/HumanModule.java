@@ -7,8 +7,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.humansecurity.mobile_sdk.HumanChallengeResult;
 import com.humansecurity.mobile_sdk.HumanSecurity;
+import com.humansecurity.mobile_sdk.main.HSBotDefenderChallengeResult;
 
 import org.json.JSONObject;
 
@@ -66,14 +66,14 @@ public class HumanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getHTTPHeaders(Promise promise) {
-        JSONObject json = new JSONObject(HumanSecurity.INSTANCE.headersForURLRequest(null));
+        JSONObject json = new JSONObject(HumanSecurity.INSTANCE.getBD().headersForURLRequest(null));
         promise.resolve(json.toString());
     }
 
     @ReactMethod
     public void handleResponse(String response, Integer code, String url, Promise promise) {
-        boolean handled = HumanSecurity.INSTANCE.handleResponse(response, null, result -> {
-            promise.resolve(result == HumanChallengeResult.SOLVED ? humanSolved : humanCancelled);
+        boolean handled = HumanSecurity.INSTANCE.getBD().handleResponse(response, null, result -> {
+            promise.resolve(result == HSBotDefenderChallengeResult.SOLVED ? humanSolved : humanCancelled);
             return null;
         });
         if (!handled) {
