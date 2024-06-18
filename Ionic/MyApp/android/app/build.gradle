@@ -44,8 +44,6 @@ dependencies {
 //    implementation 'com.humansecurity.sdk:msdk:4.0.0'
     implementation files('libs/HUMAN-release.aar')
     implementation 'androidx.core:core-ktx:1.13.1' // any version (select 1.10.1 if your app targets API 33)
-    implementation 'androidx.appcompat:appcompat:1.7.0' // min v1.0.0
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // min v2.0.0
     implementation 'androidx.lifecycle:lifecycle-process:2.8.2' // min v2.6.0
     implementation 'androidx.datastore:datastore-preferences:1.1.1' // any version (select 1.0.0 if your app targets API 33)
     implementation 'com.google.android.material:material:1.12.0' // min v1.6.0
