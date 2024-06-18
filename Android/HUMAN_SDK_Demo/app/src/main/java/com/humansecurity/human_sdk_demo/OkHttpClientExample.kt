@@ -3,7 +3,6 @@ package com.humansecurity.human_sdk_demo
 import com.humansecurity.mobile_sdk.HumanSecurity
 import com.humansecurity.mobile_sdk.main.HSBotDefenderErrorType
 import com.humansecurity.mobile_sdk.main.HSInterceptor
-import com.humansecurity.mobile_sdk.main.HSTimeoutInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.util.concurrent.TimeUnit
@@ -13,7 +12,6 @@ object OkHttpClientExample {
     private var okHttpClient: OkHttpClient = OkHttpClient.Builder()
         .callTimeout(0, TimeUnit.SECONDS)
 //        .addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when HSPolicy.automaticInterceptorPolicy.interceptorType is set to `HSAutomaticInterceptorType/none`
-        .addInterceptor(HSTimeoutInterceptor())
         .addInterceptor(HSInterceptor()) // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
         .build()
 

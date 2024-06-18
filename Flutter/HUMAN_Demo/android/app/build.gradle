@@ -78,7 +78,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-process:2.8.2' // min v2.6.0
     implementation 'androidx.datastore:datastore-preferences:1.1.1' // any version (select 1.0.0 if your app targets API 33)
     implementation 'com.google.android.material:material:1.12.0' // min v1.6.0
-    implementation 'com.google.android.gms:play-services-instantapps:18.1.0' // min v11.0.0
     implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
     implementation 'io.ktor:ktor-client-okhttp:2.3.11' // min v2.2.1
 }
