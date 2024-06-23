@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jfrog.humansecurity.com/artifactory/px-Android-SDK/' }
+        maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.4.1'
@@ -22,7 +22,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jfrog.humansecurity.com/artifactory/px-Android-SDK/' }
+        maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
 }
 
