@@ -8,7 +8,7 @@ public class MainActivity extends BridgeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        registerPlugin(PerimeterxManager.class);
+        registerPlugin(HumanManager.class);
         super.onCreate(savedInstanceState);
     }
 }

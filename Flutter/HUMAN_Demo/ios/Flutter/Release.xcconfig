@@ -1,0 +1,2 @@
+#include? "Pods/Target Support Files/Pods-HumanDemo/Pods-HumanDemo.release.xcconfig"
+#include "Generated.xcconfig"
