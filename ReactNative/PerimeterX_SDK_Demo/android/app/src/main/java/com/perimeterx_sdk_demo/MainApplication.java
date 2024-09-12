@@ -134,4 +134,14 @@ public class MainApplication extends Application implements ReactApplication, Pe
     public void perimeterxRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
 
     }
+
+    @Override
+    public void perimeterxChallengeRenderFailedHandler(@NonNull String s) {
+
+    }
+
+    @Override
+    public void perimeterxChallengeRenderedHandler(@NonNull String s) {
+
+    }
 }

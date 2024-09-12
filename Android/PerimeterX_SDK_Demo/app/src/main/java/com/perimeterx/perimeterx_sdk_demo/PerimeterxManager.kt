@@ -1,9 +1,6 @@
 package com.perimeterx.android_sdk_demo
 
 import android.app.Application
-import android.os.Handler
-import android.os.Looper
-import androidx.core.os.postDelayed
 import com.perimeterx.mobile_sdk.PerimeterX
 import com.perimeterx.mobile_sdk.PerimeterXDelegate
 import com.perimeterx.mobile_sdk.main.PXPolicy
@@ -24,6 +21,14 @@ object PerimeterxManager: PerimeterXDelegate {
 
     override fun perimeterxChallengeCancelledHandler(appId: String) {
         println("PerimeterX Challenge Cancelled")
+    }
+
+    override fun perimeterxChallengeRenderFailedHandler(appId: String) {
+        println("PerimeterX Challenge Render Failed")
+    }
+
+    override fun perimeterxChallengeRenderedHandler(appId: String) {
+        println("PerimeterX Challenge Rendered")
     }
 
     override fun perimeterxHeadersWereUpdated(headers: HashMap<String, String>, appId: String) {
