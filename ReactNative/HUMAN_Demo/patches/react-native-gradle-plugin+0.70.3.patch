@@ -1,0 +1,113 @@
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.bin b/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.bin
+new file mode 100644
+index 0000000..e65f1b1
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.bin differ
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.lock b/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.lock
+new file mode 100644
+index 0000000..54e7a2a
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/.gradle/8.9/executionHistory/executionHistory.lock differ
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/buildOutputCleanup.lock b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+new file mode 100644
+index 0000000..87e858b
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/buildOutputCleanup.lock differ
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/cache.properties b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/cache.properties
+new file mode 100644
+index 0000000..62b1a37
+--- /dev/null
++++ b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/cache.properties
+@@ -0,0 +1,2 @@
++#Thu Jan 09 16:38:10 IST 2025
++gradle.version=8.9
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/outputFiles.bin b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/outputFiles.bin
+new file mode 100644
+index 0000000..3956d9e
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/.gradle/buildOutputCleanup/outputFiles.bin differ
+diff --git a/node_modules/react-native-gradle-plugin/.gradle/file-system.probe b/node_modules/react-native-gradle-plugin/.gradle/file-system.probe
+new file mode 100644
+index 0000000..4ef2bf8
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/.gradle/file-system.probe differ
+diff --git a/node_modules/react-native-gradle-plugin/build.gradle.kts b/node_modules/react-native-gradle-plugin/build.gradle.kts
+index 7ba884a..c96f2a2 100644
+--- a/node_modules/react-native-gradle-plugin/build.gradle.kts
++++ b/node_modules/react-native-gradle-plugin/build.gradle.kts
+@@ -7,10 +7,9 @@
+ 
+ import org.gradle.api.internal.classpath.ModuleRegistry
+ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+-import org.gradle.configurationcache.extensions.serviceOf
+ 
+ plugins {
+-  kotlin("jvm") version "1.6.10"
++  kotlin("jvm") version "2.1.0"
+   id("java-gradle-plugin")
+ }
+ 
+@@ -38,19 +37,11 @@ dependencies {
+   implementation("com.squareup:javapoet:1.13.0")
+ 
+   testImplementation("junit:junit:4.13.2")
+-
+-  testRuntimeOnly(
+-      files(
+-          serviceOf<ModuleRegistry>()
+-              .getModule("gradle-tooling-api-builders")
+-              .classpath
+-              .asFiles
+-              .first()))
+ }
+ 
+ java {
+-  sourceCompatibility = JavaVersion.VERSION_1_8
+-  targetCompatibility = JavaVersion.VERSION_1_8
++  sourceCompatibility = JavaVersion.VERSION_11
++  targetCompatibility = JavaVersion.VERSION_11
+ }
+ 
+ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+diff --git a/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/build-history.bin b/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/build-history.bin
+new file mode 100644
+index 0000000..4f59538
+Binary files /dev/null and b/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/build-history.bin differ
+diff --git a/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/dirty-sources.txt b/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/dirty-sources.txt
+new file mode 100644
+index 0000000..5224214
+--- /dev/null
++++ b/node_modules/react-native-gradle-plugin/build/kotlin/compileKotlin/dirty-sources.txt
+@@ -0,0 +1,22 @@
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/BundleJsAndAssetsTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/ReactExtension.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/utils/FileUtils.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/GenerateCodegenArtifactsTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/utils/Os.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/model/ModelCodegenConfigAndroid.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/model/ModelPackageJson.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/internal/PrepareLibeventTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/utils/TaskUtils.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/BuildCodegenCLITask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/model/ModelCodegenConfig.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/GenerateCodegenSchemaTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/internal/PrepareGlogTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/ReactPlugin.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/TaskConfiguration.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/internal/ExtractJniAndHeadersTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/internal/PrepareJSCTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/utils/JsonUtils.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/AndroidConfiguration.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/internal/PrepareBoostTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/tasks/HermesBinaryTask.kt
++/Users/orenyaar/Developer/workspace/px-mobile-sdk-demo-app/ReactNative/HUMAN_Demo/node_modules/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/utils/PathUtils.kt
+\ No newline at end of file
+diff --git a/node_modules/react-native-gradle-plugin/build/pluginDescriptors/com.facebook.react.properties b/node_modules/react-native-gradle-plugin/build/pluginDescriptors/com.facebook.react.properties
+new file mode 100644
+index 0000000..f3b415e
+--- /dev/null
++++ b/node_modules/react-native-gradle-plugin/build/pluginDescriptors/com.facebook.react.properties
+@@ -0,0 +1 @@
++implementation-class=com.facebook.react.ReactPlugin
+diff --git a/node_modules/react-native-gradle-plugin/build/resources/main/META-INF/gradle-plugins/com.facebook.react.properties b/node_modules/react-native-gradle-plugin/build/resources/main/META-INF/gradle-plugins/com.facebook.react.properties
+new file mode 100644
+index 0000000..f3b415e
+--- /dev/null
++++ b/node_modules/react-native-gradle-plugin/build/resources/main/META-INF/gradle-plugins/com.facebook.react.properties
+@@ -0,0 +1 @@
++implementation-class=com.facebook.react.ReactPlugin

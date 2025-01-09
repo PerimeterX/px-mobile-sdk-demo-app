@@ -4,8 +4,9 @@ buildscript {
     ext {
         buildToolsVersion = "34.0.0"
         minSdkVersion = 21
-        compileSdkVersion = 34
-        targetSdkVersion = 34
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        kotlinVersion = '2.1.0'
 
         if (System.properties['os.arch'] == "aarch64") {
             // For M1 Users we need to use the NDK 24 which added support for aarch64
@@ -21,7 +22,7 @@ buildscript {
         maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.4.1")
+        classpath("com.android.tools.build:gradle:8.7.3")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("de.undercouch:gradle-download-task:5.0.1")
         // NOTE: Do not place your application dependencies here; they belong
