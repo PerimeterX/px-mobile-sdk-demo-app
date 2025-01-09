@@ -14,7 +14,7 @@ object KtorClientExample {
 
     private val ktorHttpClient: HttpClient = HttpClient(OkHttp) {
         install(HttpTimeout) {
-            requestTimeoutMillis = HttpTimeout.INFINITE_TIMEOUT_MS
+            requestTimeoutMillis = Long.MAX_VALUE
         }
         engine {
 //            addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none`

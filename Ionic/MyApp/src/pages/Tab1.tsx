@@ -21,7 +21,7 @@ const Tab1: React.FC = () => {
         </IonHeader>
         <ExploreContainer name="Tab 1 page" />
         <div>
-          <button type="button" onClick={testSendUrlRequest}>
+          <button type="button" onClick={sendUrlRequest}>
             Click Me
           </button>
         </div>
@@ -37,7 +37,7 @@ export interface HumanPlugin {
 
 const Human = registerPlugin<HumanPlugin>('HUMAN');
 
-const sendUrlRequest = async () => {
+const sendUrlRequestAndSimulateBlock = async () => {
   const result = await Human.getHttpHeaders()
   const json = JSON.parse(JSON.stringify(result))
   const map = new Map(Object.entries(json))
@@ -58,7 +58,7 @@ const sendUrlRequest = async () => {
   console.log("result = ", JSON.parse(JSON.stringify(challengeResult)))
 };
 
-const testSendUrlRequest = async () => {
+const sendUrlRequest = async () => {
   const result = await Human.getHttpHeaders()
   const json = JSON.parse(JSON.stringify(result))
   const map = new Map(Object.entries(json))
