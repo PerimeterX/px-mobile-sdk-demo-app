@@ -5,16 +5,14 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.getcapacitor.BridgeActivity;
-import com.perimeterx.mobile_sdk.PerimeterX;
-import com.perimeterx.mobile_sdk.PerimeterXDelegate;
-import com.perimeterx.mobile_sdk.main.PXPolicy;
-import com.perimeterx.mobile_sdk.main.PXPolicyUrlRequestInterceptionType;
-import com.perimeterx.mobile_sdk.main.PXStorageMethod;
+import com.humansecurity.mobile_sdk.HumanSecurity;
+import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType;
+import com.humansecurity.mobile_sdk.main.policy.HSPolicy;
+import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod;
 
 import java.util.HashMap;
 
-public class MainApplication extends Application implements PerimeterXDelegate {
+public class MainApplication extends Application {
 
     // Application
 
@@ -22,47 +20,15 @@ public class MainApplication extends Application implements PerimeterXDelegate {
     public void onCreate() {
         super.onCreate();
 
-        PXPolicy policy = new PXPolicy();
-        policy.setStorageMethod(PXStorageMethod.DATA_STORE);
-        policy.setUrlRequestInterceptionType(PXPolicyUrlRequestInterceptionType.NONE);
-        policy.setDoctorCheckEnabled(true);
+        HSPolicy policy = new HSPolicy();
+        policy.setStorageMethod(HSStorageMethod.DATA_STORE);
+        policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
+        policy.getDoctorAppPolicy().setEnabled(true);
         try {
-            PerimeterX.INSTANCE.start(this, "PXj9y4Q8Em", this, policy);
+            HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", policy);
         }
         catch (Exception exception) {
             exception.printStackTrace();
         }
-    }
-
-    // PerimeterXDelegate
-
-    @Override
-    public void perimeterxChallengeCancelledHandler(@NonNull String s) {
-
-    }
-
-    @Override
-    public void perimeterxChallengeSolvedHandler(@NonNull String s) {
-
-    }
-
-    @Override
-    public void perimeterxHeadersWereUpdated(@NonNull HashMap<String, String> hashMap, @NonNull String s) {
-
-    }
-
-    @Override
-    public void perimeterxRequestBlockedHandler(@Nullable String s, @NonNull String s1) {
-
-    }
-
-    @Override
-    public void perimeterxChallengeRenderFailedHandler(@NonNull String s) {
-
-    }
-
-    @Override
-    public void perimeterxChallengeRenderedHandler(@NonNull String s) {
-
     }
 }
