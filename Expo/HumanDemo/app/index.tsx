@@ -1,6 +1,8 @@
-import MainScreen from "./MainScreen";
-import { HumanSecurityManager } from "./HumanSecurityManager";
+import MainScreen from "./components/MainScreen";
+import { HumanSecurityManager } from "./utils/HumanSecurityManager";
 
+// Choose your start method according to your implementation.
+// If you are using react webView for a site protected by HUMAN configure the startHybrid.
 HumanSecurityManager.start();
 // HumanSecurityManager.startHybrid();
 
