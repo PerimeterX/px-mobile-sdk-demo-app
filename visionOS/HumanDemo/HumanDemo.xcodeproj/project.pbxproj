@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B4A6F312D65F385002F473E /* HUMAN_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4A6F302D65F385002F473E /* HUMAN_SDK */; };
 		B32FED712BFCAE3400DAC4A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FED702BFCAE3400DAC4A3 /* ViewModel.swift */; };
 		B3752D3F2BFB5A6E006E0BB8 /* HumanDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D3E2BFB5A6E006E0BB8 /* HumanDemoApp.swift */; };
 		B3752D412BFB5A6E006E0BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D402BFB5A6E006E0BB8 /* ContentView.swift */; };
@@ -17,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B32FED6C2BFCA58600DAC4A3 /* HUMAN.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:53CYT4DWJK:Perimeterx, Inc."; lastKnownFileType = wrapper.xcframework; path = HUMAN.xcframework; sourceTree = "<group>"; };
 		B32FED702BFCAE3400DAC4A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B3752D372BFB5A6E006E0BB8 /* HumanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3752D3E2BFB5A6E006E0BB8 /* HumanDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanDemoApp.swift; sourceTree = "<group>"; };
@@ -34,27 +34,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4A6F312D65F385002F473E /* HUMAN_SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B32FED6B2BFCA58600DAC4A3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B32FED6C2BFCA58600DAC4A3 /* HUMAN.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B3752D2E2BFB5A6E006E0BB8 = {
 			isa = PBXGroup;
 			children = (
 				B3752D392BFB5A6E006E0BB8 /* HumanDemo */,
-				B3752D3A2BFB5A6E006E0BB8 /* Packages */,
 				B3752D382BFB5A6E006E0BB8 /* Products */,
-				B32FED6B2BFCA58600DAC4A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +70,6 @@
 				B32FED702BFCAE3400DAC4A3 /* ViewModel.swift */,
 			);
 			path = HumanDemo;
-			sourceTree = "<group>";
-		};
-		B3752D3A2BFB5A6E006E0BB8 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		B3752D442BFB5A6F006E0BB8 /* Preview Content */ = {
@@ -113,6 +97,7 @@
 			);
 			name = HumanDemo;
 			packageProductDependencies = (
+				6B4A6F302D65F385002F473E /* HUMAN_SDK */,
 			);
 			productName = HumanDemo;
 			productReference = B3752D372BFB5A6E006E0BB8 /* HumanDemo.app */;
@@ -142,6 +127,9 @@
 				Base,
 			);
 			mainGroup = B3752D2E2BFB5A6E006E0BB8;
+			packageReferences = (
+				6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */,
+			);
 			productRefGroup = B3752D382BFB5A6E006E0BB8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -374,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PerimeterX/human-security-ios-sdk-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B4A6F302D65F385002F473E /* HUMAN_SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */;
+			productName = HUMAN_SDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3752D2F2BFB5A6E006E0BB8 /* Project object */;
 }
