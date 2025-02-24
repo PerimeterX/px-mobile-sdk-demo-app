@@ -34,7 +34,7 @@ HUMAN is a cybersecurity company that protects organizations by disrupting digit
 
 ### Flutter Demo App
 1. Download the demo app.
-2. Open Terminal.
+2. Open Terminal and run `flutter pub get`.
 3. In ios directory, run `pod install`.
 4. In the root directory, run the app by using `flutter run`.
 
@@ -42,11 +42,13 @@ HUMAN is a cybersecurity company that protects organizations by disrupting digit
 ### Ionic Demo App
 1. Download the demo app.
 2. Open Terminal.
-3. iOS:
-    1. In the iOS root directory, run `pod install`.
-    2. Open the project with Xcode (`App.xcworkspace`).
-    3. Run the app.
-4. Android:
+3. In the root directory, run `npm install`.
+4. iOS: 
+    1. in the root directory run `npx cap sync ios` then run `ionic build` and `npx cap copy ios`.
+    2. Move to the ios/App directory, and run `pod install`.
+    3. Open the project with Xcode (`App.xcworkspace`) or run `npx cap open ios`.
+    4. Run the app.
+5. Android:
     1. Open the project with Android Studio.
     2. Run the app.
 
