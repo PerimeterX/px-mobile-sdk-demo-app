@@ -145,14 +145,4 @@ public class MainApplication extends Application implements ReactApplication, HS
     public void botDefenderChallengeRenderFailed(@NonNull String s) {
 
     }
-
-    @Override
-    public void perimeterxChallengeRenderFailedHandler(@NonNull String s) {
-
-    }
-
-    @Override
-    public void perimeterxChallengeRenderedHandler(@NonNull String s) {
-
-    }
 }
