@@ -18,7 +18,23 @@
 		6ADCE9CA2A7BEF2600A9655C /* HumanManagerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADCE9C82A7BAE3400A9655C /* HumanManagerPlugin.m */; };
 		A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */; };
 		B3B365AC2C0F2F7E00457196 /* HUMAN.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3B365AB2C0F2F7E00457196 /* HUMAN.bundle */; };
+		B3C504162D9BE4A000012DD7 /* HUMAN.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B365AD2C0F31B200457196 /* HUMAN.xcframework */; };
+		B3C504172D9BE4A000012DD7 /* HUMAN.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3B365AD2C0F31B200457196 /* HUMAN.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3C504182D9BE4A000012DD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3C504172D9BE4A000012DD7 /* HUMAN.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
@@ -46,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */,
+				B3C504162D9BE4A000012DD7 /* HUMAN.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +136,7 @@
 				504EC3011FED79650016851F /* Frameworks */,
 				504EC3021FED79650016851F /* Resources */,
 				9592DBEFFC6D2A0C8D5DEB22 /* [CP] Embed Pods Frameworks */,
+				B3C504182D9BE4A000012DD7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
