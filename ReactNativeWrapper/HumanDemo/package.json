@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@humansecurity/react-native-sdk": "file:../humansecurity-react-native-sdk-1.0.0.tgz",
+    "@humansecurity/react-native-sdk": "^1.0.1",
     "axios": "^1.8.2",
     "react": "18.3.1",
     "react-native": "0.76.5",

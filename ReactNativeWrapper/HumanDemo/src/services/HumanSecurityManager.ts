@@ -20,7 +20,7 @@ export class HumanSecurityManager {
         const policy = {
             hybridAppPolicy: {
                 webRootDomains: {
-                    [this.appId]: ['.sandysbundtcakes.com'],
+                  'PX5730PH91': ['.sandysbundtcakes.com', 'sandysbundtcakes.com', 'www.sandysbundtcakes.com'],
                 },
             },
             detectionPolicy: {
