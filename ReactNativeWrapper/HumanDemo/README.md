@@ -11,7 +11,15 @@ This project serves as an example of how to integrate and work with the wrapper,
 
 ```bash
 npm install
+```
+If you encounter any issues with peer dependencies, you can use the following command to install them:
+```bash
+npm install --legacy-peer-deps
+```
+Then run:
+```bash
 cd ios && pod install
+cd ..
 ```
 
 ### **2. Build and Run the App**
