@@ -24,7 +24,7 @@ cd ..
 
 ### **2. Build and Run the App**
 
-**To build and run the app on your desired platform, use:**
+**To build and run the app on your desired platform, run from terminal (not from IDE):**
 
 ```bash
 npm run android
