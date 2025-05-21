@@ -5,13 +5,21 @@ import HumanSecurity, {
 export class HumanSecurityManager {
     static appId = 'PX5730PH91';
 
-    // 🔹 START SDK (should be called once in the app lifecycle)
+    // 🔹 START SDK with hybrid policy
     static async start(): Promise<void> {
+        const policy = {
+            hybridAppPolicy: {
+                webRootDomains: {
+                  'PX5730PH91': ['.sandysbundtcakes.com', 'sandysbundtcakes.com', 'www.sandysbundtcakes.com'],
+                },
+            },
+        };
+
         try {
-            await HumanSecurity.startWithAppId(this.appId);
-            console.log('[HumanSecurity] SDK started successfully');
+            await HumanSecurity.startWithAppId(this.appId, policy);
+            console.log('[HumanSecurity] SDK started successfully with hybrid policy');
         } catch (error) {
-            console.error('[HumanSecurity] Error starting HumanSecurity SDK:', error);
+            console.error('[HumanSecurity] Error starting HumanSecurity SDK with policy:', error);
         }
     }
 

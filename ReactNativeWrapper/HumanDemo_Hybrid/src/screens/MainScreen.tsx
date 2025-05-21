@@ -7,35 +7,37 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
+ import { WebView } from 'react-native-webview';
 import  ApiManager  from '../services/ApiManager';
 import HumanSecurity from '@humansecurity/react-native-sdk';
 import {HumanSecurityManager} from '../services/HumanSecurityManager.ts';
 
 const login_url = 'https://sandysbundtcakes.com/app1/login-page.html';
 const api_url = 'https://sandysbundtcakes.com/app1';
+const web_site = 'https://sandysbundtcakes.com/';
 
 export default function MainScreen() {
     const [apiResponse, setApiResponse] = useState<string | null>(null);
-    const [loginResponse, setLoginResponse] = useState<string | null>(null);
     const [eventLog, setEventLog] = useState<string[]>([]);
+    const [loginResponse, setLoginResponse] = useState<string | null>(null);
     console.log('[MainScreen] vid: ', HumanSecurity.vid(HumanSecurityManager.appId));
 
     // Register event listener
     useEffect(() => {
-        const subscription = HumanSecurity.BD.onBotDefenderEvent((event) => {
-            console.log(`[HumanSdk] Event received: ${event.event} | AppID: ${event.appId}`);
-            setEventLog((prevLog) => {
-                const lastEvent = prevLog[prevLog.length - 1];
-                if (!lastEvent || !lastEvent.includes(event.event)) {
-                    return [`Received event: ${event.event}`, ...prevLog];
-                }
-                return prevLog;
-            });
+      const subscription = HumanSecurity.BD.onBotDefenderEvent((event) => {
+        console.log(`[HumanSdk] Event received: ${event.event} | AppID: ${event.appId}`);
+        setEventLog((prevLog) => {
+          const lastEvent = prevLog[prevLog.length - 1];
+          if (!lastEvent || !lastEvent.includes(event.event)) {
+            return [`Received event: ${event.event}`, ...prevLog];
+          }
+          return prevLog;
         });
+      });
 
-        return () => {
-            subscription?.remove?.();
-        };
+      return () => {
+        subscription?.remove?.();
+      };
     }, []);
 
     // Handle Login (API Call via Axios)
@@ -84,10 +86,14 @@ export default function MainScreen() {
 
                     <Text style={styles.subTitle}>Event Log:</Text>
                     <ScrollView style={styles.eventLog}>
-                        {eventLog.map((event, index) => (
-                            <Text key={index} style={styles.eventItem}>{event}</Text>
-                        ))}
+                      {eventLog.map((event, index) => (
+                        <Text key={index} style={styles.eventItem}>{event}</Text>
+                      ))}
                     </ScrollView>
+
+                    <View style={styles.webviewContainer}>
+                        <WebView source={{ uri: web_site }} style={styles.webview} />
+                    </View>
                 </ScrollView>
             </View>
         </SafeAreaView>

@@ -27,12 +27,39 @@ npm run ios
 
 ## **📌 Example Overview**
 
+In this example we are showing the use of hybrid mode, Hybrid Mode should be used when your app embeds a **WebView** that loads a website protected by HUMAN. 
+Enabling Hybrid Mode allows HUMAN to identify consistency between native API calls and WebView interactions, helping to prevent false-positive security blocks.
+
+If your app does **not** use a WebView or does not interact with a HUMAN-protected site, Hybrid Mode should not be used.
+
+Before calling `startWithAppId()`, you need to **configure the policy** and **add the domains** for the hybrid sites as described `HumanSecurityManager.ts`.
+
+### 🔹 Setting Up the SDK policy
+
+When you implement the SDK, ensure you **set your app ID** as described in `HumanSecurityManager.ts`.
+
+```ts
+static appId = "YOUR_APP_ID_HERE";
+
+const policy: HSPolicy = {
+    hybridAppPolicy: {
+        webRootDomains: {
+            "YOUR_APP_ID_HERE": [".yourdomain.com"],
+        },
+    },
+    detectionPolicy: {
+        allowTouchDetection: true,
+        allowDeviceMotionDetection: false,
+    },
+};
+```
 **The general way to use the HumanSecurity SDK** is by calling:
 
 ```ts
 HumanSecurity.startWithAppId(appId);
 ```
-However, in this example, we have provided a **`HumanSecurityManager`** to keep all calls to the SDK **organized in one place**. 
+
+However, in this example, we have provided a **`HumanSecurityManager`** to keep all calls to the SDK **organized in one place**.
 This makes it easier to manage and maintain initialization, API requests, and event handling in a structured way.
 
 ### 🔹 Bot Defender
@@ -110,7 +137,6 @@ HumanSecurity.AD.setAdditionalData(parameters, appId);
 
 The Doctor App feature is not supported in this wrapper.
 To simulate a challenge, use your own App ID, perform an API call, and block the VID from the HUMAN portal, **[see our official documentation for details](https://docs.humansecurity.com/applications-and-accounts/docs/how-to-test-the-sdk-in-your-app)**.
-
 ---
 
 ## 📚 Learn More
